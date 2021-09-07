@@ -1,5 +1,4 @@
 call plug#begin('~/.vim/plugged')
-
 " File tree and undo
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'mbbill/undotree'
@@ -84,6 +83,10 @@ imap <c-c> <esc>
 vmap <c-c> <esc>
 omap <c-c> <esc>
 nnoremap <leader><space> :nohlsearch<CR>
+imap <c-,> {
+imap <c-.> }
+nmap <c-,> {
+nmap <c-.> }
 
 " Build 
 nmap <f5> :!./build.bat<CR>
