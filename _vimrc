@@ -96,7 +96,7 @@ nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bnext<CR>
 
 " Build 
-nmap <f5> :!./build.bat<CR>
+nmap <f5> :term<CR>build.bat<CR>
 
 " File exploration
 nnoremap <leader>f :!start .<CR>
