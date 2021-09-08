@@ -20,7 +20,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'ap/vim-buftabline'
 
 call plug#end()
-"
+
 " Syntax highlighting
 syntax on
 
