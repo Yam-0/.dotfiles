@@ -8,6 +8,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'prabirshrestha/asyncomplete.vim'
 	Plug 'OmniSharp/omnisharp-vim'
 	Plug 'dense-analysis/ale'
+	Plug 'sheerun/vim-polyglot'
+	Plug 'bronson/vim-trailing-whitespace'
 
 " Other
 	Plug 'tpope/vim-fugitive' " Git wrapper
@@ -15,6 +17,7 @@ call plug#begin('~/.vim/plugged')
 " Visual
 	Plug 'drewtempelmeyer/palenight.vim'
 	Plug 'itchyny/lightline.vim'
+	Plug 'ap/vim-buftabline'
 
 call plug#end()
 "
@@ -66,6 +69,7 @@ set showcmd
 set showmatch "Highlight matching ([{}])
 set laststatus=2 "Always display statusline
 set backspace=2
+set hidden
 
 " Autocomplete
 set completeopt=menuone
@@ -88,18 +92,23 @@ imap <c-,> {
 imap <c-.> }
 nmap <c-,> {
 nmap <c-.> }
+nnoremap <leader>w :FixWhitespace<CR>
+nnoremap <leader>r :set number relativenumber<CR>
+nnoremap <leader>R :set number norelativenumber<CR>
 
 " Buffers
 nnoremap <leader>b :ls<CR>:b<Space>
 nnoremap <leader>d :ls<CR>:bdelete<Space>
+nnoremap <leader>s :w<CR>:bdelete<Space><CR>
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bnext<CR>
 
-" Build 
+" Build
 nmap <f5> :term<CR>build.bat<CR>
 
 " File exploration
 nnoremap <leader>f :!start .<CR>
+nnoremap <leader>V :e ~/_vimrc<CR>
 
 " Lint, autocompletion etc
 let g:OmniSharp_Selector_ui = 'ctrlp'
