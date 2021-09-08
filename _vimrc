@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+
 " File tree and undo
 	Plug 'ctrlpvim/ctrlp.vim'
 	Plug 'mbbill/undotree'
@@ -16,7 +17,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'itchyny/lightline.vim'
 
 call plug#end()
-
+"
 " Syntax highlighting
 syntax on
 
@@ -88,8 +89,17 @@ imap <c-.> }
 nmap <c-,> {
 nmap <c-.> }
 
+" Buffers
+nnoremap <leader>b :ls<CR>:b<Space>
+nnoremap <leader>d :ls<CR>:bdelete<Space>
+nnoremap <leader>l :bnext<CR>
+nnoremap <leader>h :bnext<CR>
+
 " Build 
 nmap <f5> :!./build.bat<CR>
+
+" File exploration
+nnoremap <leader>f :!start .<CR>
 
 " Lint, autocompletion etc
 let g:OmniSharp_Selector_ui = 'ctrlp'
@@ -103,6 +113,5 @@ if has('gui_running')
 	set guioptions -=r
 	set guioptions -=L
 
-	set guifont=Fira_Mono_for_Powerline:h18:W500:cANSI:qDRAFT
 	autocmd GUIEnter * simalt ~x "Fullscreen
 endif
