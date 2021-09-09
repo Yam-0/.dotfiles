@@ -10,9 +10,11 @@ call plug#begin('~/.vim/plugged')
 	Plug 'dense-analysis/ale'
 	Plug 'sheerun/vim-polyglot'
 	Plug 'bronson/vim-trailing-whitespace'
+	Plug 'ycm-core/YouCompleteMe'
 
 " Other
 	Plug 'tpope/vim-fugitive' " Git wrapper
+	Plug 'szw/vim-maximizer' "maximize
 
 " Visual
 	Plug 'drewtempelmeyer/palenight.vim'
@@ -38,6 +40,12 @@ set shiftwidth=4
 set smartindent
 set autoindent
 set nowrap
+
+" Dynamic Python
+set pythonhome=C:\Python27
+set pythondll=C:\Python27\python27.dll
+set pythonthreehome=C:\Python36
+set pythonthreedll=C:\Python36\python36.dll
 
 " No damn bells
 set belloff=all
@@ -101,13 +109,15 @@ nnoremap <leader>b :ls<CR>:b<Space>
 nnoremap <leader>d :ls<CR>:bdelete<Space>
 nnoremap <leader>s :w<CR>:bdelete<Space><CR>
 nnoremap <leader>l :bnext<CR>
-nnoremap <leader>h :bnext<CR>
+nnoremap <leader>h :bNext<CR>
+nnoremap <leader>m :MaximizerToggle<CR>
 
 " Build
 nmap <f5> :term<CR>build.bat<CR>
 
 " File exploration
-nnoremap <leader>f :!start .<CR>
+nnoremap <leader>f :Vex<CR>
+nnoremap <leader>F :!start .<CR>
 nnoremap <leader>V :e ~/_vimrc<CR>
 
 " Lint, autocompletion etc
