@@ -1,22 +1,20 @@
 call plug#begin('~/.vim/plugged')
 
 " Code completion and linting
-	" Plug 'ycm-core/YouCompleteMe'
-	Plug 'prabirshrestha/asyncomplete.vim'
-	Plug 'dense-analysis/ale'
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'dense-analysis/ale' " Lint
 	Plug 'sheerun/vim-polyglot' " Syntax highlighting language library
-	Plug 'bronson/vim-trailing-whitespace'
+	Plug 'bronson/vim-trailing-whitespace' "Trim trailing whitespaces
 
-" File tree and undo
+" File tree and fuzzy finder
 	Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file finder
 	Plug 'preservim/nerdtree' " File navigation
 
 " Other
 	Plug 'tpope/vim-fugitive' " Git wrapper
-	Plug 'szw/vim-maximizer' "maximize
+	Plug 'szw/vim-maximizer' " Maximize
 
 " Visual
-	" Plug 'drewtempelmeyer/palenight.vim'
 	Plug 'morhetz/gruvbox'
 	Plug 'itchyny/lightline.vim' " Status line
 	Plug 'ap/vim-buftabline' " Buffer tabs
@@ -28,7 +26,6 @@ syntax on
 
 " Theme
 colorscheme gruvbox
-let g:lightline = { 'colorscheme': 'gruvbox' }
 
 " Position in code
 set number
@@ -41,12 +38,6 @@ set shiftwidth=4
 set smartindent
 set autoindent
 set nowrap
-
-" Dynamic Python
-" set pythonhome=C:\Python27
-" set pythondll=C:\Python27\python27.dll
-" set pythonthreehome=C:\Python36
-" set pythonthreedll=C:\Python36\python36.dll
 
 " No damn bells
 set belloff=all
@@ -78,15 +69,70 @@ set showcmd
 set showmatch "Highlight matching ([{}])
 set laststatus=2 "Always display statusline
 set backspace=2
-set hidden
+set hidden " Keep buffer loaded when abandoned
 set guicursor=i:block
+set updatetime=300
 
 " Autocomplete
 set completeopt=menuone
 set wildmenu
-hi Pmenu	ctermfg=white ctermbg=darkgray	 gui=NONE guifg=white guibg=darkgray
-hi PmenuSel ctermfg=white ctermbg=lightblue	 gui=bold guifg=white guibg=blue
-inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<CR>"
+
+" ------------------------------- Lint, autocompletion etc -------------------------------
+
+inoremap <silent><expr> <TAB>
+	\ pumvisible() ? "\<C-n>" :
+	\ <SID>check_back_space() ? "\<TAB>" :
+	\ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Confirm suggestion with enter
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+	if (index(['vim','help'], &filetype) >= 0)
+		execute 'h '.expand('<cword>')
+	elseif (coc#rpc#ready())
+		call CocActionAsync('doHover')
+	else
+		execute '!' . &keywordprg . " " . expand('<cword>')
+	endif
+endfunction
+
+" Rename symbol
+nmap <leader>rn <Plug>(coc-rename)
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Quick fix
+nmap <leader>q  :CocFix<CR>
+
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+	nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+	nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+	inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+	inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+	vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+	vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+endif
+
+" ------------------------------- Lint, autocompletion etc -------------------------------
 
 "Automatically closing braces
 inoremap {<CR> {<CR>}<Esc>ko<tab>
@@ -109,21 +155,21 @@ nnoremap <leader>s :w<CR>:bdelete<Space><CR>
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bNext<CR>
 nnoremap <leader>m :MaximizerToggle<CR>
+nnoremap <leader>n :badd<Space>
+nnoremap <leader>p :cd %:p:h<CR>
 
 " Build
-nmap <f5> :term<CR>build.bat<CR>
+nmap <f5> :split<CR>:term<CR><insert>build.bat<CR>
 
 " File exploration
 nnoremap <leader>f :NERDTreeToggle<CR>
+nnoremap <leader>P :NERDTree<CR>
 nnoremap <leader>F :!start .<CR>
 nnoremap <leader>V :e ~/_vimrc<CR>
 
-" Lint, autocompletion etc
-let g:OmniSharp_Selector_ui = 'ctrlp'
-autocmd FileType cs nmap <silent> <buffer> gd <plug>(omnisharp_go_to_definition)
-
 " Gui settings
 if has('gui_running')
+
 	" Disable gui
 	set guioptions -=m
 	set guioptions -=T
