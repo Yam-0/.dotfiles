@@ -150,20 +150,20 @@ tnoremap <Esc> <C-\><C-n>
 
 " Buffers
 nnoremap <leader>b :ls<CR>:b<Space>
-nnoremap <leader>d :ls<CR>:bdelete<Space>
+nnoremap <leader>d :bp<bar>sp<bar>bn<bar>bd<CR>
 nnoremap <leader>s :w<CR>:bdelete<Space><CR>
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bNext<CR>
 nnoremap <leader>m :MaximizerToggle<CR>
 nnoremap <leader>n :badd<Space>
-nnoremap <leader>p :cd %:p:h<CR>
+nnoremap <leader>P :cd %:p:h<CR>
 
 " Build
 nmap <f5> :split<CR>:term<CR><insert>build.bat<CR>
 
 " File exploration
 nnoremap <leader>f :NERDTreeToggle<CR>
-nnoremap <leader>P :NERDTree<CR>
+nnoremap <leader>p :NERDTree<CR>
 nnoremap <leader>F :!start .<CR>
 nnoremap <leader>V :e ~/_vimrc<CR>
 
