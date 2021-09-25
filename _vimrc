@@ -149,6 +149,20 @@ nnoremap <leader>R :set number norelativenumber<CR>
 tnoremap <Esc> <C-\><C-n>
 nnoremap Y y$
 
+" Moving and copying lines
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoremap <c-j> <esc>:m .+1<CR>==a
+inoremap <c-k> <esc>:m .-2<CR>==a
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+vnoremap <a-j> y<esc>Pgv=gv
+vnoremap <a-k> y<esc>'>pgv=gv
+inoremap <a-j> <esc>yypA
+inoremap <a-k> <esc>yyPA
+nnoremap <a-j> yyPA
+nnoremap <a-k> yyPA
+
 " Buffers
 nnoremap <leader>b :ls<CR>:b<Space>
 nnoremap <leader>d :bp<bar>sp<bar>bn<bar>bd<CR>
