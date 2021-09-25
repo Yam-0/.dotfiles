@@ -29,8 +29,6 @@ colorscheme gruvbox
 
 " Position in code
 set number
-" set colorcolumn=80
-" highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Tabs, indenting and Wrapping
 set tabstop=4 softtabstop=4
@@ -148,6 +146,7 @@ nnoremap <leader>r :set number relativenumber<CR>
 nnoremap <leader>R :set number norelativenumber<CR>
 tnoremap <Esc> <C-\><C-n>
 nnoremap Y y$
+nnoremap <leader>m :MaximizerToggle<CR>
 
 " Moving and copying lines
 vnoremap J :m '>+1<CR>gv=gv
@@ -169,9 +168,7 @@ nnoremap <leader>d :bp<bar>sp<bar>bn<bar>bd<CR>
 nnoremap <leader>s :w<CR>:bdelete<Space><CR>
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bNext<CR>
-nnoremap <leader>m :MaximizerToggle<CR>
 nnoremap <leader>n :badd<Space>
-nnoremap <leader>P :cd %:p:h<CR>
 
 " Build
 nmap <f5> :split<CR>:term<CR><insert>build.bat<CR>
@@ -179,6 +176,7 @@ nmap <f5> :split<CR>:term<CR><insert>build.bat<CR>
 " File navigation
 nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>p :NERDTree<CR>
+nnoremap <leader>P :cd %:p:h<CR>
 nnoremap <leader>F :!start .<CR>
 nnoremap <leader>V :e ~/_vimrc<CR>
 
