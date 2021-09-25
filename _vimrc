@@ -147,6 +147,7 @@ nnoremap <leader>w :FixWhitespace<CR>
 nnoremap <leader>r :set number relativenumber<CR>
 nnoremap <leader>R :set number norelativenumber<CR>
 tnoremap <Esc> <C-\><C-n>
+nnoremap Y y$
 
 " Buffers
 nnoremap <leader>b :ls<CR>:b<Space>
@@ -161,7 +162,7 @@ nnoremap <leader>P :cd %:p:h<CR>
 " Build
 nmap <f5> :split<CR>:term<CR><insert>build.bat<CR>
 
-" File exploration
+" File navigation
 nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>p :NERDTree<CR>
 nnoremap <leader>F :!start .<CR>
