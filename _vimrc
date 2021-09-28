@@ -1,23 +1,23 @@
 call plug#begin('~/.vim/plugged')
 
 " Code completion and linting
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'dense-analysis/ale' " Lint
-	Plug 'sheerun/vim-polyglot' " Syntax highlighting language library
-	Plug 'bronson/vim-trailing-whitespace' "Trim trailing whitespaces
+	Plug 'neoclide/coc.nvim', {'branch': 'release'} " Autocomplete
+	Plug 'dense-analysis/ale'						" Lint
+	Plug 'sheerun/vim-polyglot'						" Syntax highlighting language library
+	Plug 'bronson/vim-trailing-whitespace'			" Trim trailing whitespaces
 
 " File tree and fuzzy finder
-	Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file finder
-	Plug 'preservim/nerdtree' " File navigation
+	Plug 'ctrlpvim/ctrlp.vim'						" Fuzzy file finder
+	Plug 'preservim/nerdtree'						" File navigation
 
 " Other
-	Plug 'tpope/vim-fugitive' " Git wrapper
-	Plug 'szw/vim-maximizer' " Maximize
+	Plug 'tpope/vim-fugitive'						" Git wrapper
+	Plug 'szw/vim-maximizer'						" Maximize
 
 " Visual
-	Plug 'morhetz/gruvbox'
-	Plug 'itchyny/lightline.vim' " Status line
-	Plug 'ap/vim-buftabline' " Buffer tabs
+	Plug 'morhetz/gruvbox'							" Color theme
+	Plug 'itchyny/lightline.vim'					" Status line
+	Plug 'ap/vim-buftabline'						" Buffer tabs
 
 call plug#end()
 
@@ -31,7 +31,7 @@ colorscheme gruvbox
 set number
 
 " Tabs, indenting and Wrapping
-set tabstop=4 softtabstop=4
+set tabstop=4
 set shiftwidth=4
 set smartindent
 set autoindent
@@ -53,9 +53,9 @@ set fileencoding=utf-8
 set termencoding=utf-8
 
 " Search
-set incsearch " Search as characters are entered
-set ic
-set hlsearch
+set incsearch	" Search as characters are entered
+set ic			" Ignore case
+set hlsearch	" Highlight search results
 
 " Misc
 set scrolloff=8
@@ -68,7 +68,7 @@ set showmatch "Highlight matching ([{}])
 set laststatus=2 "Always display statusline
 set backspace=2
 set hidden " Keep buffer loaded when abandoned
-set guicursor=i:block
+set guicursor=i:block " Force block cursor in insert mode
 set updatetime=300
 
 " Autocomplete
@@ -135,11 +135,16 @@ endif
 "Automatically closing braces
 inoremap {<CR> {<CR>}<Esc>ko<tab>
 
+" leader key for mappings
 let mapleader = " "
+
+" ctrl-c to escape everywhere
 nmap <c-c> <esc>
 imap <c-c> <esc>
 vmap <c-c> <esc>
 omap <c-c> <esc>
+
+" Misc
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>w :FixWhitespace<CR>
 nnoremap <leader>r :set number relativenumber<CR>
@@ -147,6 +152,7 @@ nnoremap <leader>R :set number norelativenumber<CR>
 tnoremap <Esc> <C-\><C-n>
 nnoremap Y y$
 nnoremap <leader>m :MaximizerToggle<CR>
+nnoremap <leader>g :!start firefox --search ""<left>
 
 " Moving and copying lines
 vnoremap J :m '>+1<CR>gv=gv
@@ -175,9 +181,9 @@ nmap <f5> :split<CR>:term<CR><insert>build.bat<CR>
 
 " File navigation
 nnoremap <leader>f :NERDTreeToggle<CR>
+nnoremap <leader>F :!start .<CR>
 nnoremap <leader>p :NERDTree<CR>
 nnoremap <leader>P :cd %:p:h<CR>
-nnoremap <leader>F :!start .<CR>
 nnoremap <leader>V :e ~/_vimrc<CR>
 
 " Gui settings
