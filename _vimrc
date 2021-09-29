@@ -11,7 +11,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'preservim/nerdtree'						" File navigation
 
 " Other
-	Plug 'tpope/vim-fugitive'						" Git wrapper
 	Plug 'szw/vim-maximizer'						" Maximize
 
 " Visual
@@ -152,21 +151,20 @@ nnoremap <leader>R :set number norelativenumber<CR>
 tnoremap <Esc> <C-\><C-n>
 nnoremap Y y$
 nnoremap <leader>m :MaximizerToggle<CR>
-nnoremap <leader>g :!start firefox --search ""<left>
 
 " Moving and copying lines
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-inoremap <c-j> <esc>:m .+1<CR>==a
-inoremap <c-k> <esc>:m .-2<CR>==a
-nnoremap <leader>j :m .+1<CR>==
-nnoremap <leader>k :m .-2<CR>==
-vnoremap <a-j> y<esc>Pgv=gv
-vnoremap <a-k> y<esc>'>pgv=gv
-inoremap <a-j> <esc>yypA
-inoremap <a-k> <esc>yyPA
-nnoremap <a-j> yyPA
-nnoremap <a-k> yyPA
+vnoremap <a-j> :m '>+1<CR>gv=gv
+vnoremap <a-k> :m '<-2<CR>gv=gv
+inoremap <a-j> <esc>:m .+1<CR>==a
+inoremap <a-k> <esc>:m .-2<CR>==a
+nnoremap <a-j> :m .+1<CR>==
+nnoremap <a-k> :m .-2<CR>==
+vnoremap <a-J> y<esc>Pgv=gv
+vnoremap <a-K> y<esc>'>pgv=gv
+inoremap <a-J> <esc>yypA
+inoremap <a-K> <esc>yyPA
+nnoremap <a-J> yypA
+nnoremap <a-K> yyPA
 
 " Buffers
 nnoremap <leader>b :ls<CR>:b<Space>
