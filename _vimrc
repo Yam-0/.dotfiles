@@ -151,6 +151,8 @@ nnoremap <leader>R :set number norelativenumber<CR>
 tnoremap <Esc> <C-\><C-n>
 nnoremap Y y$
 nnoremap <leader>m :MaximizerToggle<CR>
+nnoremap <c-j> o<esc>
+nnoremap <c-k> O<esc>
 
 " Moving and copying lines
 vnoremap <a-j> :m '>+1<CR>gv=gv
@@ -186,7 +188,6 @@ nnoremap <leader>V :e ~/_vimrc<CR>
 
 " Gui settings
 if has('gui_running')
-
 	" Disable gui
 	set guioptions -=m
 	set guioptions -=T
