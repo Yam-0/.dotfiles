@@ -12,6 +12,8 @@ call plug#begin('~/.vim/plugged')
 
 " Other
 	Plug 'szw/vim-maximizer'						" Maximize
+	Plug 'tpope/vim-surround' 						" Change around word
+	Plug 'tpope/vim-commentary' 					" Comment utility
 
 " Visual
 	Plug 'morhetz/gruvbox'							" Color theme
@@ -63,11 +65,11 @@ set title
 set nocompatible
 set cursorline
 set showcmd
-set showmatch "Highlight matching ([{}])
-set laststatus=2 "Always display statusline
-set backspace=2
-set hidden " Keep buffer loaded when abandoned
-set guicursor=i:block " Force block cursor in insert mode
+set showmatch 			" Highlight matching ([{}])
+set laststatus=2 		" Always display statusline
+set backspace=2 		" Free backspace
+set hidden 				" Keep buffer loaded when abandoned
+set guicursor=i:block 	" Force block cursor in insert mode
 set updatetime=300
 
 " Autocomplete
@@ -131,9 +133,6 @@ endif
 
 " ------------------------------- Lint, autocompletion etc -------------------------------
 
-"Automatically closing braces
-inoremap {<CR> {<CR>}<Esc>ko<tab>
-
 " leader key for mappings
 let mapleader = " "
 
@@ -142,17 +141,22 @@ nmap <c-c> <esc>
 imap <c-c> <esc>
 vmap <c-c> <esc>
 omap <c-c> <esc>
+tmap <c-c> <C-\><C-n>
 
 " Misc
 nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <leader>m :MaximizerToggle<CR>
 nnoremap <leader>w :FixWhitespace<CR>
+inoremap {<CR> {<CR>}<Esc>ko<tab>
+nnoremap Y y$
+
+" Relative numbers
 nnoremap <leader>r :set number relativenumber<CR>
 nnoremap <leader>R :set number norelativenumber<CR>
-tnoremap <Esc> <C-\><C-n>
-nnoremap Y y$
-nnoremap <leader>m :MaximizerToggle<CR>
-nnoremap <c-j> o<esc>
-nnoremap <c-k> O<esc>
+
+" Add empty lines
+nnoremap <c-j> o<esc>cc<esc>
+nnoremap <c-k> O<esc>cc<esc>
 
 " Moving and copying lines
 vnoremap <a-j> :m '>+1<CR>gv=gv
@@ -174,9 +178,8 @@ nnoremap <leader>d :bp<bar>sp<bar>bn<bar>bd<CR>
 nnoremap <leader>s :w<CR>:bdelete<Space><CR>
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bNext<CR>
-nnoremap <leader>n :badd<Space>
 
-" Build
+" Build integration
 nmap <f5> :split<CR>:term<CR><insert>build.bat<CR>
 
 " File navigation
@@ -185,14 +188,3 @@ nnoremap <leader>F :!start .<CR>
 nnoremap <leader>p :NERDTree<CR>
 nnoremap <leader>P :cd %:p:h<CR>
 nnoremap <leader>V :e ~/_vimrc<CR>
-
-" Gui settings
-if has('gui_running')
-	" Disable gui
-	set guioptions -=m
-	set guioptions -=T
-	set guioptions -=r
-	set guioptions -=L
-
-	autocmd GUIEnter * simalt ~x "Fullscreen
-endif
