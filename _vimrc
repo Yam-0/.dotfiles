@@ -159,12 +159,12 @@ inoremap <a-j> <esc>:m .+1<CR>==a
 inoremap <a-k> <esc>:m .-2<CR>==a
 nnoremap <a-j> :m .+1<CR>==
 nnoremap <a-k> :m .-2<CR>==
-vnoremap <a-J> y<esc>Pgv=gv
-vnoremap <a-K> y<esc>'>pgv=gv
-inoremap <a-J> <esc>yypA
-inoremap <a-K> <esc>yyPA
-nnoremap <a-J> yypA
-nnoremap <a-K> yyPA
+vnoremap <a-J> y<esc>P==gv=gv
+vnoremap <a-K> y<esc>'>p==gv=gv
+inoremap <a-J> <esc>yyp==A
+inoremap <a-K> <esc>yyP==A
+nnoremap <a-J> yyp==
+nnoremap <a-K> yyP==
 
 " Buffers
 nnoremap <leader>b :ls<CR>:b<Space>
