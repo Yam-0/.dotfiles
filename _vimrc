@@ -14,6 +14,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'szw/vim-maximizer'						" Maximize
 	Plug 'tpope/vim-surround' 						" Change around word
 	Plug 'tpope/vim-commentary' 					" Comment utility
+	Plug 'jiangmiao/auto-pairs' 					" Autocomplete parenthesis pairs
 
 " Visual
 	Plug 'morhetz/gruvbox'							" Color theme
@@ -70,6 +71,7 @@ set laststatus=2 		" Always display statusline
 set backspace=2 		" Free backspace
 set hidden 				" Keep buffer loaded when abandoned
 set guicursor=i:block 	" Force block cursor in insert mode
+set autoread 			" Autoload file changes
 set updatetime=300
 
 " Autocomplete
@@ -147,7 +149,6 @@ tmap <c-c> <C-\><C-n>
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>m :MaximizerToggle<CR>
 nnoremap <leader>w :FixWhitespace<CR>
-inoremap {<CR> {<CR>}<Esc>ko<tab>
 nnoremap Y y$
 
 " Relative numbers
