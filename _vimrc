@@ -15,6 +15,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-surround' 						" Change around word
 	Plug 'tpope/vim-commentary' 					" Comment utility
 	Plug 'jiangmiao/auto-pairs' 					" Autocomplete parenthesis pairs
+	Plug 'tpope/vim-fugitive' 						" Git wrapper
+	Plug 'junegunn/goyo.vim' 						" Zen mode
 
 " Visual
 	Plug 'morhetz/gruvbox'							" Color theme
@@ -48,8 +50,6 @@ set nowritebackup
 set undodir=~/.vim/undodir
 set undofile
 
-" File encoding
-set noswapfile
 set encoding=utf-8
 set fileencoding=utf-8
 set termencoding=utf-8
@@ -151,6 +151,10 @@ nnoremap <leader>m :MaximizerToggle<CR>
 nnoremap <leader>w :FixWhitespace<CR>
 nnoremap Y y$
 
+" Zen
+nnoremap <leader>z :Goyo 120<CR>
+nnoremap <leader>Z :Goyo!<CR>
+
 " Relative numbers
 nnoremap <leader>r :set number relativenumber<CR>
 nnoremap <leader>R :set number norelativenumber<CR>
@@ -175,7 +179,7 @@ nnoremap <a-K> yyP==
 
 " Buffers
 nnoremap <leader>b :ls<CR>:b<Space>
-nnoremap <leader>d :bp<bar>sp<bar>bn<bar>bd<CR>
+nnoremap <leader>d :bd<CR>
 nnoremap <leader>s :w<CR>:bdelete<Space><CR>
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bNext<CR>
