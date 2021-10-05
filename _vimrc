@@ -39,7 +39,9 @@ set tabstop=4
 set shiftwidth=4
 set smartindent
 set autoindent
-set nowrap
+set wrap
+" set linebreak
+" set tw=75
 
 " No damn bells
 set belloff=all
@@ -150,6 +152,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>m :MaximizerToggle<CR>
 nnoremap <leader>w :FixWhitespace<CR>
 nnoremap Y y$
+nnoremap glf vipJgql
 
 " Zen
 nnoremap <leader>z :Goyo 120<CR>
@@ -185,9 +188,9 @@ nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bNext<CR>
 
 " Build integration
-nmap <f3> :!bibtex document.aux<CR>
-nmap <f4> :!pdflatex document.tex<CR>
-nmap <f5> :split<CR>:term<CR><insert>build.bat<CR>
+nnoremap glr :!bibtex document.aux<CR>
+nnoremap glb :!pdflatex document.tex<CR>
+nnoremap <f5> :split<CR>:term<CR><insert>build.bat<CR>
 
 " File navigation
 nnoremap <leader>f :NERDTreeToggle<CR>
