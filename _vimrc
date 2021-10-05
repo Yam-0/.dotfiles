@@ -185,6 +185,8 @@ nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bNext<CR>
 
 " Build integration
+nmap <f3> :!bibtex document.aux<CR>
+nmap <f4> :!pdflatex document.tex<CR>
 nmap <f5> :split<CR>:term<CR><insert>build.bat<CR>
 
 " File navigation
