@@ -40,8 +40,6 @@ set shiftwidth=4
 set smartindent
 set autoindent
 set wrap
-" set linebreak
-" set tw=75
 
 " No damn bells
 set belloff=all
@@ -152,10 +150,12 @@ nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>m :MaximizerToggle<CR>
 nnoremap <leader>w :FixWhitespace<CR>
 nnoremap Y y$
-nnoremap glf vipJgql
+nnoremap <leader>glf vipJgql
+nnoremap <leader>gle :set lbr<CR>:set tw=75<CR>:Goyo<CR>
+nnoremap <leader>glE :set lbr!<CR>:Goyo!<CR>
 
 " Zen
-nnoremap <leader>z :Goyo 120<CR>
+nnoremap <leader>z :Goyo<CR>
 nnoremap <leader>Z :Goyo!<CR>
 
 " Relative numbers
@@ -188,8 +188,8 @@ nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bNext<CR>
 
 " Build integration
-nnoremap glr :!bibtex document.aux<CR>
-nnoremap glb :!pdflatex document.tex<CR>
+nnoremap <leader>glr :!bibtex document.aux<CR>
+nnoremap <leader>glb :!pdflatex document.tex<CR>
 nnoremap <f5> :split<CR>:term<CR><insert>build.bat<CR>
 
 " File navigation
