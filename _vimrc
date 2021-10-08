@@ -153,6 +153,8 @@ nnoremap Y y$
 nnoremap <leader>glf vipJgql
 nnoremap <leader>gle :set lbr<CR>:set tw=75<CR>:Goyo<CR>
 nnoremap <leader>glE :set lbr!<CR>:Goyo!<CR>
+vnoremap <Tab> >gv
+vnoremap <s-Tab> <gv
 
 " Zen
 nnoremap <leader>z :Goyo<CR>
