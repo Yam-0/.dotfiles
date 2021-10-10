@@ -153,8 +153,6 @@ nnoremap Y y$
 nnoremap <leader>glf vipJgql
 nnoremap <leader>gle :set lbr<CR>:set tw=75<CR>:Goyo<CR>
 nnoremap <leader>glE :set lbr!<CR>:Goyo!<CR>
-vnoremap <Tab> >gv
-vnoremap <s-Tab> <gv
 
 " Zen
 nnoremap <leader>z :Goyo<CR>
@@ -181,6 +179,10 @@ inoremap <a-J> <esc>yyp==A
 inoremap <a-K> <esc>yyP==A
 nnoremap <a-J> yyp==
 nnoremap <a-K> yyP==
+nnoremap <Tab> >>
+nnoremap <s-Tab> <<
+vnoremap <Tab> >gv
+vnoremap <s-Tab> <gv
 
 " Buffers
 nnoremap <leader>b :ls<CR>:b<Space>
