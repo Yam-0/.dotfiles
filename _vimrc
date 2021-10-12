@@ -19,7 +19,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'junegunn/goyo.vim' 						" Zen mode
 
 " Visual
-	Plug 'morhetz/gruvbox'							" Color theme
+	Plug 'morhetz/gruvbox'							" Colorscheme
+	Plug 'shaunsingh/nord.nvim' 					" Colorscheme
 	Plug 'itchyny/lightline.vim'					" Status line
 	Plug 'ap/vim-buftabline'						" Buffer tabs
 
@@ -50,6 +51,7 @@ set nowritebackup
 set undodir=~/.vim/undodir
 set undofile
 
+" File encoding
 set encoding=utf-8
 set fileencoding=utf-8
 set termencoding=utf-8
@@ -72,6 +74,7 @@ set backspace=2 		" Free backspace
 set hidden 				" Keep buffer loaded when abandoned
 set guicursor=i:block 	" Force block cursor in insert mode
 set autoread 			" Autoload file changes
+set noshowmode
 set updatetime=300
 
 " Autocomplete
@@ -203,3 +206,6 @@ nnoremap <leader>F :!start .<CR>
 nnoremap <leader>p :NERDTree<CR>
 nnoremap <leader>P :cd %:p:h<CR>
 nnoremap <leader>V :e ~/_vimrc<CR>
+
+" Lightline configuration
+let g:lightline = { 'colorscheme': 'gruvbox' }
