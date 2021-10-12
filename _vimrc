@@ -153,9 +153,6 @@ nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>m :MaximizerToggle<CR>
 nnoremap <leader>w :FixWhitespace<CR>
 nnoremap Y y$
-nnoremap <leader>glf vipJgql
-nnoremap <leader>gle :set lbr<CR>:set tw=75<CR>:Goyo<CR>
-nnoremap <leader>glE :set lbr!<CR>:Goyo!<CR>
 
 " Zen
 nnoremap <leader>z :Goyo<CR>
@@ -195,9 +192,7 @@ nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bNext<CR>
 
 " Build integration
-nnoremap <leader>glr :!bibtex document.aux<CR>
-nnoremap <leader>glb :!pdflatex document.tex<CR>
-nnoremap <leader>glo :!firefox --new-tab "file://C:/Users/tage.akerstrom/Documents/Projects/GYARB/document.pdf"<CR>
+nnoremap <f4> :split<CR>:term<CR><insert>run.bat<CR>
 nnoremap <f5> :split<CR>:term<CR><insert>build.bat<CR>
 
 " File navigation
@@ -206,6 +201,11 @@ nnoremap <leader>F :!start .<CR>
 nnoremap <leader>p :NERDTree<CR>
 nnoremap <leader>P :cd %:p:h<CR>
 nnoremap <leader>V :e ~/_vimrc<CR>
+
+" LaTeX
+nnoremap <leader>gg vipJgql
+command! EnterWriteMode :set lbr tw=75 | :Goyo | colorscheme nord
+command! ExitWriteMode :set lbr! | :Goyo! | colorscheme gruvbox
 
 " Lightline configuration
 let g:lightline = { 'colorscheme': 'gruvbox' }
