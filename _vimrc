@@ -194,6 +194,7 @@ nnoremap <leader>h :bNext<CR>
 " Build integration
 nnoremap <leader>glr :!bibtex document.aux<CR>
 nnoremap <leader>glb :!pdflatex document.tex<CR>
+nnoremap <leader>glo :!firefox --new-tab "file://C:/Users/tage.akerstrom/Documents/Projects/GYARB/document.pdf"<CR>
 nnoremap <f5> :split<CR>:term<CR><insert>build.bat<CR>
 
 " File navigation
