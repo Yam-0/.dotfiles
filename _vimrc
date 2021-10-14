@@ -154,11 +154,16 @@ nnoremap <leader>w :FixWhitespace<CR>
 nnoremap Y y$
 
 " Auto pairs
-inoremap (<tab> ()<c-o>i
+inoremap (<tab> ()<Left>
 inoremap {<tab> {<CR>}<c-o>O
-inoremap [<tab> []<c-o>i
-inoremap "<tab> ""<c-o>i
-inoremap '<tab> ''<c-o>i
+inoremap [<tab> []<Left>
+inoremap "<tab> ""<Left>
+inoremap '<tab> ''<Left>
+inoremap (; ();<Left><Left>
+inoremap {; {<CR>};<c-o>O
+inoremap [; []<Left>
+inoremap ", "",<Left><Left>
+inoremap ', '',<Left><Left>
 
 " Zen
 nnoremap <leader>z :Goyo<CR>
@@ -230,8 +235,11 @@ command! Reroot cd %:p:h
 
 " LaTeX
 nnoremap <leader>gg vipJgql
+
+" Modes
 command! EnterWriteMode :set lbr tw=75 | :Goyo | colorscheme nord
-command! ExitWriteMode :set lbr! | :Goyo! | colorscheme gruvbox
+command! EnterFocusMode :Goyo | colorscheme nord
+command! EnterNormalMode :set lbr! | :Goyo! | colorscheme gruvbox
 
 " Lightline configuration
 let g:lightline = { 'colorscheme': 'gruvbox' }
