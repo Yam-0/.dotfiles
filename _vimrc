@@ -123,7 +123,7 @@ xmap <leader>ca  <Plug>(coc-codeaction-selected)
 nmap <leader>ca  <Plug>(coc-codeaction-selected)
 
 " Quick fix
-nmap <leader>cq  :CocFix<CR>
+nmap <leader>cf  :CocFix<CR>
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
 if has('nvim-0.4.0') || has('patch-8.2.0750')
@@ -158,6 +158,7 @@ inoremap (<tab> ()<c-o>i
 inoremap {<tab> {<CR>}<c-o>O
 inoremap [<tab> []<c-o>i
 inoremap "<tab> ""<c-o>i
+inoremap '<tab> ''<c-o>i
 
 " Zen
 nnoremap <leader>z :Goyo<CR>
@@ -176,8 +177,6 @@ imap <c-h> {
 imap <c-j> }
 imap <c-k> [
 imap <c-l> ]
-imap <c-n> (
-imap <c-m> )
 
 " Moving and copying lines
 vnoremap <a-j> :m '>+1<CR>gv=gv
