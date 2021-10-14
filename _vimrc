@@ -14,7 +14,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'szw/vim-maximizer'						" Maximize
 	Plug 'tpope/vim-surround' 						" Change around word
 	Plug 'tpope/vim-commentary' 					" Comment utility
-	Plug 'jiangmiao/auto-pairs' 					" Autocomplete parenthesis pairs
 	Plug 'tpope/vim-fugitive' 						" Git wrapper
 	Plug 'junegunn/goyo.vim' 						" Zen mode
 
@@ -40,7 +39,7 @@ set tabstop=4
 set shiftwidth=4
 set smartindent
 set autoindent
-set wrap
+set nowrap
 
 " No damn bells
 set belloff=all
@@ -116,15 +115,15 @@ function! s:show_documentation()
 endfunction
 
 " Rename symbol
-nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>cr <Plug>(coc-rename)
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+xmap <leader>ca  <Plug>(coc-codeaction-selected)
+nmap <leader>ca  <Plug>(coc-codeaction-selected)
 
 " Quick fix
-nmap <leader>q  :CocFix<CR>
+nmap <leader>cq  :CocFix<CR>
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
 if has('nvim-0.4.0') || has('patch-8.2.0750')
@@ -153,6 +152,12 @@ nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>m :MaximizerToggle<CR>
 nnoremap <leader>w :FixWhitespace<CR>
 nnoremap Y y$
+
+" Auto pairs
+inoremap (<tab> ()<c-o>i
+inoremap {<tab> {<CR>}<c-o>O
+inoremap [<tab> []<c-o>i
+inoremap "<tab> ""<c-o>i
 
 " Zen
 nnoremap <leader>z :Goyo<CR>
@@ -184,6 +189,14 @@ nnoremap <s-Tab> <<
 vnoremap <Tab> >gv
 vnoremap <s-Tab> <gv
 
+" Alt+ navigation
+nnoremap <a-h> 0
+nnoremap <a-l> $
+vnoremap <a-h> 0
+vnoremap <a-l> $
+inoremap <a-h> <c-o>0
+inoremap <a-l> <c-o>$
+
 " Buffers
 nnoremap <leader>b :ls<CR>:b<Space>
 nnoremap <leader>d :bd<CR>
@@ -198,9 +211,9 @@ nnoremap <f5> :split<CR>:term<CR><insert>build.bat<CR>
 " File navigation
 nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>F :!start .<CR>
-nnoremap <leader>p :NERDTree<CR>
-nnoremap <leader>P :cd %:p:h<CR>
+nnoremap <leader>p :cd %:p:h<CR>
 nnoremap <leader>V :e ~/_vimrc<CR>
+command! Reroot cd %:p:h
 
 " LaTeX
 nnoremap <leader>gg vipJgql
