@@ -204,6 +204,12 @@ nnoremap <leader>s :w<CR>:bdelete<Space><CR>
 nnoremap <leader>l :bnext<CR>
 nnoremap <leader>h :bNext<CR>
 
+" Split resize
+nnoremap <Right> :vert res +5<CR>
+nnoremap <Left> :vert res -5<CR>
+nnoremap <Up> :res -5<CR>
+nnoremap <Down> :res +5<CR>
+
 " Build integration
 nnoremap <f4> :split<CR>:term<CR><insert>run.bat<CR>
 nnoremap <f5> :split<CR>:term<CR><insert>build.bat<CR>
