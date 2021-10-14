@@ -171,6 +171,14 @@ nnoremap <leader>R :set number norelativenumber<CR>
 nnoremap <c-j> o<esc>cc<esc>
 nnoremap <c-k> O<esc>cc<esc>
 
+" Easy brackets
+imap <c-h> {
+imap <c-j> }
+imap <c-k> [
+imap <c-l> ]
+imap <c-n> (
+imap <c-m> )
+
 " Moving and copying lines
 vnoremap <a-j> :m '>+1<CR>gv=gv
 vnoremap <a-k> :m '<-2<CR>gv=gv
