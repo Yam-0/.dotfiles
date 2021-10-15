@@ -161,7 +161,7 @@ inoremap "<tab> ""<Left>
 inoremap '<tab> ''<Left>
 inoremap (; ();<Left><Left>
 inoremap {; {<CR>};<c-o>O
-inoremap [; []<Left>
+inoremap [; [];<Left><Left>
 inoremap ", "",<Left><Left>
 inoremap ', '',<Left><Left>
 
