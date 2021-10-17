@@ -184,12 +184,12 @@ imap <c-k> [
 imap <c-l> ]
 
 " Moving and copying lines
-vnoremap <a-j> :m '>+1<CR>gv=gv
-vnoremap <a-k> :m '<-2<CR>gv=gv
-inoremap <a-j> <esc>:m .+1<CR>==a
-inoremap <a-k> <esc>:m .-2<CR>==a
-nnoremap <a-j> :m .+1<CR>==
-nnoremap <a-k> :m .-2<CR>==
+vnoremap <silent> <a-k> :m '<-2<CR>gv=gv
+inoremap <silent> <a-j> <esc>:m .+1<CR>==a
+vnoremap <silent> <a-j> :m '>+1<CR>gv=gv
+inoremap <silent> <a-k> <esc>:m .-2<CR>==a
+nnoremap <silent> <a-j> :m .+1<CR>==
+nnoremap <silent> <a-k> :m .-2<CR>==
 vnoremap <a-J> y<esc>P==gv=gv
 vnoremap <a-K> y<esc>'>p==gv=gv
 inoremap <a-J> <esc>yyp==A
@@ -210,17 +210,17 @@ inoremap <a-h> <c-o>0
 inoremap <a-l> <c-o>$
 
 " Buffers
-nnoremap <leader>b :ls<CR>:b<Space>
-nnoremap <leader>d :bd<CR>
-nnoremap <leader>s :w<CR>:bdelete<Space><CR>
-nnoremap <leader>l :bnext<CR>
-nnoremap <leader>h :bNext<CR>
+nnoremap <silent> <leader>b :ls<CR>:b<Space>
+nnoremap <silent> <leader>d :bd<CR>
+nnoremap <silent> <leader>s :w<CR>:bdelete<Space><CR>
+nnoremap <silent> <leader>l :bnext<CR>
+nnoremap <silent> <leader>h :bNext<CR>
 
 " Split resize
-nnoremap <Right> :vert res +5<CR>
-nnoremap <Left> :vert res -5<CR>
-nnoremap <Up> :res -5<CR>
-nnoremap <Down> :res +5<CR>
+nnoremap <silent> <Right> :vert res +5<CR>
+nnoremap <silent> <Left> :vert res -5<CR>
+nnoremap <silent> <Up> :res -5<CR>
+nnoremap <silent> <Down> :res +5<CR>
 
 " Build integration
 nnoremap <f4> :split<CR>:term<CR><insert>run.bat<CR>
