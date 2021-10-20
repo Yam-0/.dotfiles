@@ -145,7 +145,10 @@ nmap <c-c> <esc>
 imap <c-c> <esc>
 vmap <c-c> <esc>
 omap <c-c> <esc>
-tmap <c-c> <C-\><C-n>
+
+" Invert tab and c-\ for terminal
+tnoremap <c-c> <C-\><C-n>
+tnoremap <esc> <c-c>
 
 " Misc
 nnoremap <leader><space> :nohlsearch<CR>
@@ -202,12 +205,12 @@ vnoremap <Tab> >gv
 vnoremap <s-Tab> <gv
 
 " Alt+ navigation
-nnoremap <a-h> 0
-nnoremap <a-l> $
-vnoremap <a-h> 0
-vnoremap <a-l> $
-inoremap <a-h> <c-o>0
-inoremap <a-l> <c-o>$
+nnoremap <a-h> ^
+nnoremap <a-l> g_
+vnoremap <a-h> ^
+vnoremap <a-l> g_
+inoremap <a-h> <c-o>^
+inoremap <a-l> <c-o>g_
 
 " Buffers
 nnoremap <silent> <leader>b :ls<CR>:b<Space>
