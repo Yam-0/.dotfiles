@@ -238,7 +238,6 @@ nnoremap <f5> :split<CR>:term<CR><insert>build.bat<CR>
 " File navigation
 nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>F :!start .<CR>
-nnoremap <leader>P :cd %:p:h<CR>
 nnoremap <leader>V :e ~/_vimrc<CR>
 command! Reroot cd %:p:h
 
