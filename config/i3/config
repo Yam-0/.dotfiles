@@ -22,8 +22,9 @@ bindsym $mod+Shift+q kill
 bindsym $mod+n move scratchpad
 bindsym $mod+Shift+n scratchpad show
 
-# bindsym $mod+d exec --no-startup-id ~/.config/rofi/launch.sh
+# Run menu
 bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+Shift+d exec --no-startup-id rofi -show run
 
 # change focus
 bindsym $mod+h focus left
@@ -41,6 +42,7 @@ bindsym $mod+Shift+l move right
 bindsym $mod+ctrl+h split h
 bindsym $mod+ctrl+v split v
 
+# Fullscreen
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
@@ -137,6 +139,7 @@ exec_always setxkbmap se
 # Disable mouse acceleration
 exec_always xset m 1
 
+# Picom
 exec_always --no-startup-id picom --config ~/.config/picom.conf -CGb --experimental-backends
 
 # -- Definitions --
@@ -144,6 +147,7 @@ set $mod Mod4
 set $inner_gaps 20
 set $outer_gaps 32
 
+# Colors
 client.focused #03b6fc #03b6fc #03b6fc
 
 # -- Gaps --
