@@ -145,10 +145,13 @@ exec_always --no-startup-id picom --config ~/.config/picom.conf -CGb --experimen
 # -- Definitions --
 set $mod Mod4
 set $inner_gaps 20
-set $outer_gaps 32
+set $outer_gaps 48
 
 # Colors
-client.focused #03b6fc #03b6fc #03b6fc
+client.focused #7dbf2f #7dbf2f #7dbf2f #7dff2f
+client.unfocused #1d1d1d #1d1d1d #1d1d1d #1d1d1d
+client.focused_inactive #1d1d1d #1d1d1d #1d1d1d #1d1d1d
+client.urgent #1d1d1d #1d1d1d #1d1d1d #1d1d1d
 
 # -- Gaps --
 for_window [class="^.*"] border pixel 2
