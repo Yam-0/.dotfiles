@@ -20,8 +20,10 @@ call plug#begin('~/.vim/plugged')
 " Visual
 	Plug 'morhetz/gruvbox'							" Colorscheme
 	Plug 'shaunsingh/nord.nvim' 					" Colorscheme
+	Plug 'kaicataldo/material.vim' 					" Colorscheme
 	Plug 'itchyny/lightline.vim'					" Status line
 	Plug 'ap/vim-buftabline'						" Buffer tabs
+	Plug 'ap/vim-css-color' 						" Preview colors
 
 call plug#end()
 
@@ -29,7 +31,10 @@ call plug#end()
 syntax on
 
 " Theme
-colorscheme gruvbox
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'darker'
+colorscheme material
+set termguicolors
 
 " Position in code
 set number
@@ -145,10 +150,7 @@ nmap <c-c> <esc>
 imap <c-c> <esc>
 vmap <c-c> <esc>
 omap <c-c> <esc>
-
-" Invert tab and c-\ for terminal
-tnoremap <c-c> <C-\><C-n>
-tnoremap <esc> <c-c>
+tmap <c-c> <C-\><C-n>
 
 " Misc
 nnoremap <leader><space> :nohlsearch<CR>
@@ -159,18 +161,12 @@ nnoremap Y y$
 " Auto pairs
 inoremap (<tab> ()<Left>
 inoremap {<tab> {<CR>}<c-o>O
-inoremap {<space> {  }<Left><Left>
 inoremap [<tab> []<Left>
 inoremap "<tab> ""<Left>
 inoremap '<tab> ''<Left>
 inoremap (; ();<Left><Left>
 inoremap {; {<CR>};<c-o>O
 inoremap [; [];<Left><Left>
-inoremap "; "";<Left><Left>
-inoremap '; '';<Left><Left>
-inoremap (, (),<Left><Left>
-inoremap {, {},<c-o>O
-inoremap [, [],<Left><Left>
 inoremap ", "",<Left><Left>
 inoremap ', '',<Left><Left>
 
@@ -211,12 +207,12 @@ vnoremap <Tab> >gv
 vnoremap <s-Tab> <gv
 
 " Alt+ navigation
-nnoremap <a-h> ^
-nnoremap <a-l> g_
-vnoremap <a-h> ^
-vnoremap <a-l> g_
-inoremap <a-h> <c-o>^
-inoremap <a-l> <c-o>g_
+nnoremap <a-h> 0
+nnoremap <a-l> $
+vnoremap <a-h> 0
+vnoremap <a-l> $
+inoremap <a-h> <c-o>0
+inoremap <a-l> <c-o>$
 
 " Buffers
 nnoremap <silent> <leader>b :ls<CR>:b<Space>
@@ -232,12 +228,13 @@ nnoremap <silent> <Up> :res -5<CR>
 nnoremap <silent> <Down> :res +5<CR>
 
 " Build integration
-nnoremap <f4> :split<CR>:term<CR><insert>run.bat<CR>
-nnoremap <f5> :split<CR>:term<CR><insert>build.bat<CR>
+nnoremap <f4> :split<CR>:term<CR><insert>./run.*<CR>
+nnoremap <f5> :split<CR>:term<CR><insert>./build.*<CR>
 
 " File navigation
 nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>F :!start .<CR>
+nnoremap <leader>p :cd %:p:h<CR>
 nnoremap <leader>V :e ~/_vimrc<CR>
 command! Reroot cd %:p:h
 
@@ -250,4 +247,4 @@ command! EnterWriteMode :set lbr tw=75 | :Goyo 80 | colorscheme nord
 command! EnterFocusMode :Goyo 80 | colorscheme nord
 
 " Lightline configuration
-let g:lightline = { 'colorscheme': 'gruvbox' }
+let g:lightline = { 'colorscheme': 'material_vim' }
