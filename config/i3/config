@@ -13,7 +13,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -119,19 +119,6 @@ bindsym $mod+Left resize shrink width 3 px or 3 ppt
 bindsym $mod+Down resize grow height 3 px or 3 ppt
 bindsym $mod+Up resize shrink height 3 px or 3 ppt
 bindsym $mod+Right resize grow width 3 px or 3 ppt
-
-# resize window mode
-bindsym $mod+r mode "resize"
-mode "resize" {
-		bindsym h resize shrink width 3 px or 3 ppt
-        bindsym j resize grow height 3 px or 3 ppt
-        bindsym k resize shrink height 3 px or 3 ppt
-        bindsym l resize grow width 3 px or 3 ppt
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
 
 # Keyboard layout
 exec_always setxkbmap se
