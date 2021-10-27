@@ -98,12 +98,15 @@ function! s:check_back_space() abort
 	return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" Confirm suggestion with enter
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+" Code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 
+" Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
@@ -116,12 +119,18 @@ function! s:show_documentation()
 	endif
 endfunction
 
+" Rename symbol
 nmap <leader>cr <Plug>(coc-rename)
-xmap <leader>ca  <Plug>(coc-codeaction-selected)
-vmap <leader>ca  <Plug>(coc-codeaction-selected)
-nmap <leader>cf :CocFix<CR>
-nmap <leader>cd :CocDiagnostics<CR>
 
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>ca  <Plug>(coc-codeaction-selected)
+nmap <leader>ca  <Plug>(coc-codeaction-selected)
+
+" Quick fix
+nmap <leader>cf  :CocFix<CR>
+
+" Remap <C-f> and <C-b> for scroll float windows/popups.
 if has('nvim-0.4.0') || has('patch-8.2.0750')
 	nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
 	nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
@@ -233,9 +242,9 @@ command! Reroot cd %:p:h
 nnoremap <leader>gg vipJgql
 
 " Modes
-command! EnterNormalMode :set lbr! | :Goyo! | colorscheme material
+command! EnterNormalMode :set lbr! | :Goyo! | colorscheme gruvbox
 command! EnterWriteMode :set lbr tw=75 | :Goyo 80 | colorscheme nord
-command! EnterFocusMode :Goyo 80 | colorscheme gruvbox
+command! EnterFocusMode :Goyo 80 | colorscheme nord
 
 " Lightline configuration
 let g:lightline = { 'colorscheme': 'material_vim' }
