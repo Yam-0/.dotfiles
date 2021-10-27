@@ -19,7 +19,7 @@ secondary = #BFA62A
 alert = #e65e70
 
 [bar/main]
-width = 75%
+width = 100%
 height = 32
 radius = 0.0
 padding-right = 2
@@ -28,7 +28,7 @@ spacing = 1
 enable-ipc = true
 override-redirect = true
 wm-restack = i3
-offset-x = 12.5%
+# offset-x = 12.5%
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -45,7 +45,7 @@ module-margin-left = 1;
 
 modules-left = i3 xwindow
 modules-center = spotify previous playpause next
-modules-right = temperature battery alsa date powermenu
+modules-right = temperature battery pulseaudio-control date powermenu
 
 [module/xwindow]
 type = internal/xwindow
@@ -114,27 +114,23 @@ format-underline = #7dbf2f
 
 label = %date% %time%
 
-[module/alsa]
-type = internal/alsa
+[module/pulseaudio-control]
+type = custom/script
+tail = true
+format-underline = ${colors.background-alt}
+label-padding = 2
+label-foreground = ${colors.foreground}
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
-
-format-muted-prefix = ""
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #ffffff
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.primary}
+# Icons mixed from Font Awesome 5 and Material Icons
+# You can copy-paste your options for each possible action, which is more
+# trouble-free but repetitive, or apply only the relevant ones (for example
+# --sink-blacklist is only needed for next-sink).
+exec = pulseaudio-control --icons-volume " , " --icon-muted " " --sink-nicknames-from "device.description" --sink-nickname "alsa_output.pci-0000_00_1b.0.analog-stereo:  Speakers" --sink-nickname "alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo:  Headphones" listen
+click-right = exec pavucontrol &
+click-left = pulseaudio-control togmute
+click-middle = pulseaudio-control --sink-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra2" next-sink
+scroll-up = pulseaudio-control --volume-max 130 up
+scroll-down = pulseaudio-control --volume-max 130 down
 
 [module/battery]
 type = internal/battery

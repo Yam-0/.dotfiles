@@ -1,1 +1,1 @@
-picom --config ~/.config/picom.conf -CGb --experimental-backends
+picom --config ~/Projects/.dotfiles/config/picom/picom.conf -CGb --experimental-backends
