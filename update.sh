@@ -1,13 +1,18 @@
 #!/usr/bin/bash
 
-echo "Config file updater";
+cd ~/Projects/.dotfiles/
+
+echo "";
+echo "Dotfiles updater";
 echo "";
 
+git pull origin main
+
 while true; do
-	read -p "Update action: [C]ancel | [P]ush local | [F]etch origin : " cpf
-	case $cpf in
-		[Cc]* ) echo "Canceled" && exit;;
-		[Pp]* ) echo "Pushing" && ./scripts/push_update.sh;;
-		[Ff]* ) echo "Fetching" && ./scripts/fetch_update.sh;;
+	read -p "Updating dotfiles | [C]ANCEL | [F]ETCH | [P]USH : " cfp
+	case $cfp in
+		[Cc]* ) exit;;
+		[Ff]* ) ./scripts/update_fetch.sh && exit;;
+		[Pp]* ) ./scripts/update_push.sh && exit;;
 	esac
 done

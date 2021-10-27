@@ -1,3 +1,3 @@
-#!
+#!/usr/bin/bash
 killall -q polybar
-polybar main
+polybar -c ~/Projects/.dotfiles/config/polybar/config main

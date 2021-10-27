@@ -1,6 +1,3 @@
-#import:
-#  - /path/to/alacritty.yml
-
 env:
   TERM: alacritty
 
