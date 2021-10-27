@@ -213,10 +213,10 @@ nnoremap <silent> <leader>l :bnext<CR>
 nnoremap <silent> <leader>h :bNext<CR>
 
 " Split resize
-nnoremap <silent> <Right> :vert res +5<CR>
-nnoremap <silent> <Left> :vert res -5<CR>
-nnoremap <silent> <Up> :res -5<CR>
-nnoremap <silent> <Down> :res +5<CR>
+nnoremap <silent> <Right> :vert res +3<CR>
+nnoremap <silent> <Left> :vert res -3<CR>
+nnoremap <silent> <Up> :res -1<CR>
+nnoremap <silent> <Down> :res +1<CR>
 
 " Build integration
 nnoremap <f4> :split<CR>:term<CR><insert>./run.*<CR>
