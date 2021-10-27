@@ -13,7 +13,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -144,8 +144,8 @@ exec_always --no-startup-id picom --config ~/.config/picom.conf -CGb --experimen
 
 # -- Definitions --
 set $mod Mod4
-set $inner_gaps 20
-set $outer_gaps 48
+set $inner_gaps 24
+set $outer_gaps 28
 
 # Colors
 client.focused #7dbf2f #7dbf2f #7dbf2f #7dff2f
