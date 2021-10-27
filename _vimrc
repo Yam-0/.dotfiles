@@ -233,9 +233,9 @@ command! Reroot cd %:p:h
 nnoremap <leader>gg vipJgql
 
 " Modes
-command! EnterNormalMode :set lbr! | :Goyo! | colorscheme gruvbox
+command! EnterNormalMode :set lbr! | :Goyo! | colorscheme material
 command! EnterWriteMode :set lbr tw=75 | :Goyo 80 | colorscheme nord
-command! EnterFocusMode :Goyo 80 | colorscheme nord
+command! EnterFocusMode :Goyo 80 | colorscheme gruvbox
 
 " Lightline configuration
 let g:lightline = { 'colorscheme': 'material_vim' }
