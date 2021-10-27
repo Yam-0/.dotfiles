@@ -37,7 +37,7 @@ line-size = 3
 line-color = #ffffff
 
 font-0 = Iosevka:size=12;2
-font-1 = Font Awesome 5 Free:size=12;2
+font-1 = FontAwesome:size=12;2
 
 bottom = false
 module-margin-right = 1;
@@ -154,7 +154,7 @@ type = custom/menu
 
 format-spacing = 1
 
-label-open = X
+label-open = 
 label-open-foreground = #ffffff
 label-close =  cancel
 label-close-foreground = #ffffff
@@ -192,7 +192,7 @@ format-font = 2
 ; Default
 hook-0 = echo ""
 ; When spotify active
-hook-1 = echo ""
+hook-1 = echo ""
 click-left = "spotifyctl -q previous"
 
 [module/next]
@@ -201,7 +201,7 @@ format-font = 2
 ; Default
 hook-0 = echo ""
 ; When spotify active
-hook-1 = echo ""
+hook-1 = echo ""
 click-left = "spotifyctl -q next"
 
 [module/playpause]
@@ -210,9 +210,9 @@ format-font = 2
 ; Default
 hook-0 = echo ""
 ; Playing
-hook-1 = echo ""
+hook-1 = echo ""
 ; Paused
-hook-2 = echo ""
+hook-2 = echo ""
 click-left = "spotifyctl -q playpause"
 
 [module/spotify]
