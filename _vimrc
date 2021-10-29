@@ -228,8 +228,8 @@ nnoremap <silent> <Up> :res -1<CR>
 nnoremap <silent> <Down> :res +1<CR>
 
 " Build integration
-nnoremap <f4> :split<CR>:term<CR><insert>./run.*<CR>
-nnoremap <f5> :split<CR>:term<CR><insert>./build.*<CR>
+nnoremap <f4> :split<CR>:term<CR><insert>run<CR>
+nnoremap <f5> :split<CR>:term<CR><insert>build<CR>
 
 " File navigation
 nnoremap <leader>f :NERDTreeToggle<CR>
