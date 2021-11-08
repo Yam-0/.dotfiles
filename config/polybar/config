@@ -26,7 +26,7 @@ padding-right = 2
 spacing = 1
 
 enable-ipc = true
-override-redirect = true
+# override-redirect = true
 wm-restack = i3
 # offset-x = 12.5%
 
