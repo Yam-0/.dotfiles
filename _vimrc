@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'dense-analysis/ale'						" Lint
 	Plug 'sheerun/vim-polyglot'						" Syntax highlighting language library
 	Plug 'bronson/vim-trailing-whitespace'			" Trim trailing whitespaces
+	Plug 'lervag/vimtex' 							" LaTeX
 
 " File tree and fuzzy finder
 	Plug 'ctrlpvim/ctrlp.vim'						" Fuzzy file finder
@@ -240,11 +241,14 @@ command! Reroot cd %:p:h
 
 " LaTeX
 nnoremap <leader>gg vipJgql
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
 
 " Modes
-command! EnterNormalMode :set lbr! | :Goyo! | colorscheme gruvbox
-command! EnterWriteMode :set lbr tw=75 | :Goyo 80 | colorscheme nord
-command! EnterFocusMode :Goyo 80 | colorscheme nord
+command! EnterNormalMode :set lbr! | :Goyo!
+command! EnterWriteMode :set lbr tw=75 | :Goyo 80
+command! EnterFocusMode :Goyo 80
 
 " Lightline configuration
 let g:lightline = { 'colorscheme': 'material_vim' }
