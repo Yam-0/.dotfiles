@@ -247,8 +247,8 @@ let g:vimtex_quickfix_mode=0
 
 " Modes
 command! EnterNormalMode :set lbr! | :Goyo!
-command! EnterWriteMode :set lbr tw=75 | :Goyo 80
-command! EnterFocusMode :Goyo 80
+command! EnterWriteMode :set lbr tw=75 | :Goyo 80x100%
+command! EnterFocusMode :Goyo 80x100%
 
 " Lightline configuration
 let g:lightline = { 'colorscheme': 'material_vim' }
