@@ -166,10 +166,15 @@ inoremap [<tab> []<Left>
 inoremap "<tab> ""<Left>
 inoremap '<tab> ''<Left>
 inoremap (; ();<Left><Left>
-inoremap {; {<CR>};<c-o>O
+inoremap {; {};<Left><Left>
 inoremap [; [];<Left><Left>
-inoremap ", "",<Left><Left>
-inoremap ', '',<Left><Left>
+" inoremap "; "";<Left><Left>
+" inoremap '; '';<Left><Left>
+" inoremap (, (),<Left><Left>
+" inoremap {, {},<Left><Left>
+" inoremap [, [],<Left><Left>
+" inoremap ", "",<Left><Left>
+" inoremap ', '',<Left><Left>
 
 " Zen
 nnoremap <leader>z :Goyo<CR>
@@ -229,8 +234,8 @@ nnoremap <silent> <Up> :res -1<CR>
 nnoremap <silent> <Down> :res +1<CR>
 
 " Build integration
-nnoremap <f4> :split<CR>:term<CR><insert>run<CR>
-nnoremap <f5> :split<CR>:term<CR><insert>build<CR>
+nnoremap <f4> :split<CR>:term<CR><insert>./run.*<CR>
+nnoremap <f5> :split<CR>:term<CR><insert>./build.*<CR>
 
 " File navigation
 nnoremap <leader>f :NERDTreeToggle<CR>
@@ -238,6 +243,9 @@ nnoremap <leader>F :!start .<CR>
 nnoremap <leader>p :cd %:p:h<CR>
 nnoremap <leader>V :e ~/_vimrc<CR>
 command! Reroot cd %:p:h
+
+" Easy copy
+vnoremap <leader>C "+y
 
 " LaTeX
 nnoremap <leader>gg vipJgql
