@@ -13,6 +13,7 @@ PS1='[ \W ] : '
 
 alias shit='git'
 alias nav='. ~/.bin/scripts/navigator.sh'
+alias rose='~/Projects/C/rose/build/rose'
 
 export VISUAL=nvim;
 export EDITOR=nvim;
