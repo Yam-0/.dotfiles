@@ -17,6 +17,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-commentary' 					" Comment utility
 	Plug 'tpope/vim-fugitive' 						" Git wrapper
 	Plug 'junegunn/goyo.vim' 						" Zen mode
+	Plug 'ton/vim-alternate'
 
 " Visual
 	Plug 'morhetz/gruvbox'							" Colorscheme
@@ -168,13 +169,9 @@ inoremap '<tab> ''<Left>
 inoremap (; ();<Left><Left>
 inoremap {; {};<Left><Left>
 inoremap [; [];<Left><Left>
-" inoremap "; "";<Left><Left>
-" inoremap '; '';<Left><Left>
-" inoremap (, (),<Left><Left>
-" inoremap {, {},<Left><Left>
-" inoremap [, [],<Left><Left>
-" inoremap ", "",<Left><Left>
-" inoremap ', '',<Left><Left>
+inoremap (, (),<Left><Left>
+inoremap {, {},<Left><Left>
+inoremap [, [],<Left><Left>
 
 " Zen
 nnoremap <leader>z :Goyo<CR>
@@ -221,9 +218,8 @@ inoremap <a-h> <c-o>^
 inoremap <a-l> <c-o>g_
 
 " Buffers
-nnoremap <silent> <leader>b :ls<CR>:b<Space>
-nnoremap <silent> <leader>d :bd<CR>
 nnoremap <silent> <leader>s :w<CR>:bdelete<Space><CR>
+nnoremap <silent> <leader>S :bd<CR>
 nnoremap <silent> <leader>l :bnext<CR>
 nnoremap <silent> <leader>h :bNext<CR>
 
@@ -257,6 +253,10 @@ let g:vimtex_quickfix_mode=0
 command! EnterNormalMode :set lbr! | :Goyo!
 command! EnterWriteMode :set lbr tw=75 | :Goyo 80x100%
 command! EnterFocusMode :Goyo 80x100%
+
+" Alternate between .c and .h file locations
+nnoremap <leader>S :Alternate<CR>
+let g:AlternatePaths = ['./include', '..']
 
 " Lightline configuration
 let g:lightline = { 'colorscheme': 'material_vim' }

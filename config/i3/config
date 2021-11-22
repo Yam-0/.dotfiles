@@ -135,8 +135,8 @@ exec_always --no-startup-id ~/Projects/.dotfiles/config/picom/launch.sh
 
 # -- Definitions --
 set $mod Mod4
-set $inner_gaps 12
-set $outer_gaps 16
+set $inner_gaps 8
+set $outer_gaps 4
 
 # Colors
 client.focused #7dbf2f #7dbf2f #7dbf2f #7dff2f
