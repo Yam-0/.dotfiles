@@ -12,7 +12,7 @@ alias ls='ls --color=auto -a'
 PS1='[ \W ] : '
 
 alias shit='git'
-alias nav='. ~/.bin/scripts/navigator.sh'
+alias nav='. ~/.bin/scripts/nav.sh'
 alias rose='~/Projects/C/rose/build/rose'
 
 export VISUAL=nvim;
