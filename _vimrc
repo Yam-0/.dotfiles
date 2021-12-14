@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'sheerun/vim-polyglot'						" Syntax highlighting language library
 	Plug 'bronson/vim-trailing-whitespace'			" Trim trailing whitespaces
 	Plug 'lervag/vimtex' 							" LaTeX
+	Plug 'alvan/vim-closetag' 	 					" HTML
 
 " File tree and fuzzy finder
 	Plug 'ctrlpvim/ctrlp.vim'						" Fuzzy file finder
@@ -259,4 +260,19 @@ nnoremap <leader>S :Alternate<CR>
 let g:AlternatePaths = ['./include', '..']
 
 " Lightline configuration
-let g:lightline = { 'colorscheme': 'material_vim' }
+let g:lightline = { 'colorcheme': 'material_vim' }
+
+" closetag configuration
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js'
+let g:closetag_filetypes = 'html,xhtml,phtml,jsx,js'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx,js'
+let g:closetag_emptyTags_caseSensitive = 1
+let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ 'typescriptreact': 'jsxRegion,tsxRegion',
+    \ 'javascriptreact': 'jsxRegion',
+    \ }
+let g:closetag_shortcut = '>'
+let g:closetag_close_shortcut = '<leader>>'
