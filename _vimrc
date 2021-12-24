@@ -125,10 +125,8 @@ endfunction
 " Rename symbol
 nmap <leader>cr <Plug>(coc-rename)
 
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
 xmap <leader>ca  <Plug>(coc-codeaction-selected)
-nmap <leader>ca  <Plug>(coc-codeaction-selected)
+nmap <leader>ca :CocAction<CR>
 
 " Quick fix
 nmap <leader>cf  :CocFix<CR>
@@ -250,7 +248,7 @@ command! Reroot cd %:p:h
 vnoremap <leader>C "+y
 
 " LaTeX
-nnoremap <leader>gg vipJgql
+nnoremap <leader>gg gqip
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
