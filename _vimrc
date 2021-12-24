@@ -155,6 +155,10 @@ vmap <c-c> <esc>
 omap <c-c> <esc>
 tmap <c-c> <C-\><C-n>
 
+" Quick escape
+imap jk <esc>
+imap kj <esc>
+
 " Misc
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>m :MaximizerToggle<CR>
@@ -163,7 +167,8 @@ nnoremap Y y$
 
 " Auto pairs
 inoremap (<tab> ()<Left>
-inoremap {<tab> {<CR>}<c-o>O
+inoremap {<tab> {}<Left>
+inoremap {<CR> {<CR>}<c-o>O
 inoremap [<tab> []<Left>
 inoremap "<tab> ""<Left>
 inoremap '<tab> ''<Left>
@@ -194,8 +199,8 @@ imap <c-l> ]
 
 " Moving and copying lines
 vnoremap <silent> <a-k> :m '<-2<CR>gv=gv
-inoremap <silent> <a-j> <esc>:m .+1<CR>==a
 vnoremap <silent> <a-j> :m '>+1<CR>gv=gv
+inoremap <silent> <a-j> <esc>:m .+1<CR>==a
 inoremap <silent> <a-k> <esc>:m .-2<CR>==a
 nnoremap <silent> <a-j> :m .+1<CR>==
 nnoremap <silent> <a-k> :m .-2<CR>==
@@ -219,8 +224,8 @@ inoremap <a-h> <c-o>^
 inoremap <a-l> <c-o>g_
 
 " Buffers
-nnoremap <silent> <leader>s :w<CR>:bdelete<Space><CR>
-nnoremap <silent> <leader>S :bd<CR>
+nnoremap <silent> <leader>s :w<CR>:bp\|bd<space>#<CR>
+nnoremap <silent> <leader>d :bd<CR>
 nnoremap <silent> <leader>l :bnext<CR>
 nnoremap <silent> <leader>h :bNext<CR>
 
