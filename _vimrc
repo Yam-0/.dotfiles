@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'bronson/vim-trailing-whitespace'			" Trim trailing whitespaces
 	Plug 'lervag/vimtex' 							" LaTeX
 	Plug 'alvan/vim-closetag' 	 					" HTML
+	Plug 'mattn/emmet-vim' 							" Emmets
 
 " File tree and fuzzy finder
 	Plug 'junegunn/fzf'								" Fuzzy file finder
@@ -165,6 +166,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>m :MaximizerToggle<CR>
 nnoremap <leader>w :FixWhitespace<CR>
 nnoremap Y y$
+imap <c-e> <c-y>,
 
 " Fuzzy finder
 nnoremap <C-p> :FZF<CR>
