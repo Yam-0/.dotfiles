@@ -21,6 +21,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-fugitive' 						" Git wrapper
 	Plug 'junegunn/goyo.vim' 						" Zen mode
 	Plug 'ton/vim-alternate' 						" C utility
+	Plug 'tpope/vim-eunuch' 						" Utility
+	Plug 'airblade/vim-gitgutter' 					" Git diff
 
 " Visual
 	Plug 'morhetz/gruvbox'							" Colorscheme
