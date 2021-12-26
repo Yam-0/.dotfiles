@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 
 " File tree and fuzzy finder
 	Plug 'junegunn/fzf'								" Fuzzy file finder
+	Plug 'junegunn/fzf.vim'
 	Plug 'preservim/nerdtree'						" File navigation
 
 " Other
@@ -127,11 +128,11 @@ endfunction
 " Rename symbol
 nmap <leader>cr <Plug>(coc-rename)
 
-xmap <leader>ca  <Plug>(coc-codeaction-selected)
+xmap <leader>ca <Plug>(coc-codeaction-selected)
 nmap <leader>ca :CocAction<CR>
 
 " Quick fix
-nmap <leader>cf  :CocFix<CR>
+nmap <leader>cf :CocFix<CR>
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
 if has('nvim-0.4.0') || has('patch-8.2.0750')
@@ -167,6 +168,7 @@ nnoremap Y y$
 
 " Fuzzy finder
 nnoremap <C-p> :FZF<CR>
+nnoremap <C-f> :Lines<CR>
 
 " Auto pairs
 inoremap (<tab> ()<Left>

@@ -20,6 +20,7 @@ export HISTIGNORE=' *'
 alias shit='git'
 alias v='nvim .'
 alias nav='. ~/.bin/scripts/nav.sh'
+alias fuzzy='. ~/.bin/scripts/fuzzy.sh'
 alias rose='~/Projects/C/rose/build/rose'
 
 export VISUAL=nvim;
