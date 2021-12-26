@@ -10,7 +10,7 @@ call plug#begin('~/.vim/plugged')
 
 " File tree and fuzzy finder
 	Plug 'junegunn/fzf'								" Fuzzy file finder
-	Plug 'junegunn/fzf.vim'
+	Plug 'junegunn/fzf.vim' 						" Wrapper
 	Plug 'preservim/nerdtree'						" File navigation
 
 " Other
@@ -19,7 +19,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-commentary' 					" Comment utility
 	Plug 'tpope/vim-fugitive' 						" Git wrapper
 	Plug 'junegunn/goyo.vim' 						" Zen mode
-	Plug 'ton/vim-alternate'
+	Plug 'ton/vim-alternate' 						" C utility
 
 " Visual
 	Plug 'morhetz/gruvbox'							" Colorscheme
@@ -129,7 +129,7 @@ endfunction
 nmap <leader>cr <Plug>(coc-rename)
 
 xmap <leader>ca <Plug>(coc-codeaction-selected)
-nmap <leader>ca :CocAction<CR>
+nnoremap <leader>ca :CocAction<CR>
 
 " Quick fix
 nmap <leader>cf :CocFix<CR>
@@ -203,8 +203,8 @@ imap <c-k> [
 imap <c-l> ]
 
 " Moving and copying lines
-vnoremap <silent> <a-k> :m '<-2<CR>gv=gv
 vnoremap <silent> <a-j> :m '>+1<CR>gv=gv
+vnoremap <silent> <a-k> :m '<-2<CR>gv=gv
 inoremap <silent> <a-j> <esc>:m .+1<CR>==a
 inoremap <silent> <a-k> <esc>:m .-2<CR>==a
 nnoremap <silent> <a-j> :m .+1<CR>==
@@ -259,8 +259,8 @@ autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
+" Minimal ui
 let NERDTreeMinimalUI=1
-
 augroup nerdtreehidecwd
 	autocmd!
 	autocmd FileType nerdtree syntax match NERDTreeHideCWD #^[</].*$# conceal
@@ -283,7 +283,7 @@ command! EnterNormalMode :set lbr! | :Goyo!
 command! EnterWriteMode :set lbr tw=60 | :Goyo!
 command! EnterFocusMode :Goyo 80x100%
 
-" Alternate between .c and .h file locations
+" Alternate between files
 nnoremap <leader>S :Alternate<CR>
 let g:AlternatePaths = ['./include', '..', '.']
 let g:AlternateExtensionMappings = [{'.cpp' : '.h', '.h' : '.hpp', '.hpp' : '.cpp'}, {'.c': '.h', '.h': '.c'}, {'.js': '.module.css', '.module.css': '.js'}]
@@ -291,7 +291,7 @@ let g:AlternateExtensionMappings = [{'.cpp' : '.h', '.h' : '.hpp', '.hpp' : '.cp
 " Lightline configuration
 let g:lightline = { 'colorcheme': 'material_vim' }
 
-" closetag configuration
+" Closetag configuration
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js'
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js'
 let g:closetag_filetypes = 'html,xhtml,phtml,jsx,js'
