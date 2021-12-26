@@ -283,7 +283,8 @@ command! EnterFocusMode :Goyo 80x100%
 
 " Alternate between .c and .h file locations
 nnoremap <leader>S :Alternate<CR>
-let g:AlternatePaths = ['./include', '..']
+let g:AlternatePaths = ['./include', '..', '.']
+let g:AlternateExtensionMappings = [{'.cpp' : '.h', '.h' : '.hpp', '.hpp' : '.cpp'}, {'.c': '.h', '.h': '.c'}, {'.js': '.module.css', '.module.css': '.js'}]
 
 " Lightline configuration
 let g:lightline = { 'colorcheme': 'material_vim' }
