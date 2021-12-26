@@ -9,7 +9,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'alvan/vim-closetag' 	 					" HTML
 
 " File tree and fuzzy finder
-	Plug 'ctrlpvim/ctrlp.vim'						" Fuzzy file finder
+	Plug 'junegunn/fzf'								" Fuzzy file finder
 	Plug 'preservim/nerdtree'						" File navigation
 
 " Other
@@ -27,6 +27,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'itchyny/lightline.vim'					" Status line
 	Plug 'ap/vim-buftabline'						" Buffer tabs
 	Plug 'ap/vim-css-color' 						" Preview colors
+	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " Nerdtree colors
+	Plug 'ryanoasis/vim-devicons' 					" Icons
 
 call plug#end()
 
@@ -163,6 +165,9 @@ nnoremap <leader>m :MaximizerToggle<CR>
 nnoremap <leader>w :FixWhitespace<CR>
 nnoremap Y y$
 
+" Fuzzy finder
+nnoremap <C-p> :FZF<CR>
+
 " Auto pairs
 inoremap (<tab> ()<Left>
 inoremap {<tab> {}<Left>
@@ -243,6 +248,24 @@ nnoremap <leader>F :!start .<CR>
 nnoremap <leader>p :cd %:p:h<CR>
 nnoremap <leader>V :e ~/_vimrc<CR>
 command! Reroot cd %:p:h
+
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
+let NERDTreeMinimalUI=1
+
+augroup nerdtreehidecwd
+	autocmd!
+	autocmd FileType nerdtree syntax match NERDTreeHideCWD #^[</].*$# conceal
+augroup end
+
+" Hide tilde
+hi NonText guifg=bg
 
 " Easy copy
 vnoremap <leader>C "+y
