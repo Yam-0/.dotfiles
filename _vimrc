@@ -265,10 +265,19 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 
 " Minimal ui
 let NERDTreeMinimalUI=1
+" let NERDTreeDirArrows = 1
 augroup nerdtreehidecwd
 	autocmd!
 	autocmd FileType nerdtree syntax match NERDTreeHideCWD #^[</].*$# conceal
 augroup end
+
+let NERDTreeMapCustomOpen='l'
+let NERDTreeMapCloseDir='h'
+
+" Git
+nmap ghs <Plug>(GitGutterStageHunk)
+nmap ghu <Plug>(GitGutterUndoHunk)
+nmap ghp <Plug>(GitGutterPreviewHunk)
 
 " Hide tilde
 hi NonText guifg=bg
