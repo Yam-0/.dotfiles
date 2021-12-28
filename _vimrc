@@ -250,7 +250,7 @@ nnoremap <f5> :split<CR>:term<CR><insert>./build.*<CR>
 
 " File navigation
 nnoremap <leader>f :NERDTreeToggle<CR>
-nnoremap <leader>F :!start .<CR>
+nnoremap <leader>F :NERDTreeFind<CR>
 nnoremap <leader>p :cd %:p:h<CR>
 nnoremap <leader>V :e ~/_vimrc<CR>
 command! Reroot cd %:p:h
