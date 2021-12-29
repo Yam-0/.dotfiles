@@ -15,18 +15,16 @@ call plug#begin('~/.vim/plugged')
 	Plug 'preservim/nerdtree'						" File navigation
 
 " Other
+	Plug 'junegunn/goyo.vim' 						" Zen mode
 	Plug 'szw/vim-maximizer'						" Maximize
+	Plug 'ton/vim-alternate' 						" C utility
+	Plug 'airblade/vim-gitgutter' 					" Git diff
 	Plug 'tpope/vim-surround' 						" Change around word
 	Plug 'tpope/vim-commentary' 					" Comment utility
 	Plug 'tpope/vim-fugitive' 						" Git wrapper
-	Plug 'junegunn/goyo.vim' 						" Zen mode
-	Plug 'ton/vim-alternate' 						" C utility
 	Plug 'tpope/vim-eunuch' 						" Utility
-	Plug 'airblade/vim-gitgutter' 					" Git diff
 
 " Visual
-	Plug 'morhetz/gruvbox'							" Colorscheme
-	Plug 'shaunsingh/nord.nvim' 					" Colorscheme
 	Plug 'kaicataldo/material.vim' 					" Colorscheme
 	Plug 'itchyny/lightline.vim'					" Status line
 	Plug 'ap/vim-buftabline'						" Buffer tabs
@@ -265,12 +263,12 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 
 " Minimal ui
 let NERDTreeMinimalUI=1
-" let NERDTreeDirArrows = 1
 augroup nerdtreehidecwd
 	autocmd!
 	autocmd FileType nerdtree syntax match NERDTreeHideCWD #^[</].*$# conceal
 augroup end
 
+" Behave Nerdtree!
 let NERDTreeMapCustomOpen='l'
 let NERDTreeMapCloseDir='h'
 
@@ -292,9 +290,8 @@ let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 
 " Modes
-command! EnterNormalMode :set lbr! | :Goyo!
-command! EnterWriteMode :set lbr tw=60 | :Goyo!
-command! EnterFocusMode :Goyo 80x100%
+command! EnterNormalMode :set lbr!
+command! EnterWriteMode :set lbr tw=60
 
 " Alternate between files
 nnoremap <leader>S :Alternate<CR>
@@ -306,15 +303,4 @@ let g:lightline = { 'colorcheme': 'material_vim' }
 
 " Closetag configuration
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js'
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js'
-let g:closetag_filetypes = 'html,xhtml,phtml,jsx,js'
-let g:closetag_xhtml_filetypes = 'xhtml,jsx,js'
-let g:closetag_emptyTags_caseSensitive = 1
-let g:closetag_regions = {
-    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-    \ 'javascript.jsx': 'jsxRegion',
-    \ 'typescriptreact': 'jsxRegion,tsxRegion',
-    \ 'javascriptreact': 'jsxRegion',
-    \ }
 let g:closetag_shortcut = '>'
-let g:closetag_close_shortcut = '<leader>>'
