@@ -40,28 +40,15 @@ bindsym $mod+Shift+l move right
 
 # Split
 exec_always --no-startup-id /usr/bin/alternating_layouts.py
-bindsym $mod+ctrl+h split h
-bindsym $mod+ctrl+v split v
 
 # Fullscreen
 bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+Shift+space focus mode_toggle
-
-# focus child container
-bindsym $mod+c focus child
-
-# focus the parent container
-bindsym $mod+p focus parent
 
 # Lock screen
 bindsym $mod+x exec $HOME/.bin/scripts/lock.sh
@@ -135,11 +122,11 @@ exec_always --no-startup-id ~/Projects/.dotfiles/config/picom/launch.sh
 
 # -- Definitions --
 set $mod Mod4
-set $inner_gaps 8
-set $outer_gaps 4
+set $inner_gaps 12
+set $outer_gaps 8
 
 # Colors
-client.focused #01BABF #01BABF #01BABF #01BABF
+client.focused #FFFFFF #FFFFFF #FFFFFF #FFFFFF
 client.unfocused #1d1d1d #1d1d1d #1d1d1d #1d1d1d
 client.focused_inactive #1d1d1d #1d1d1d #1d1d1d #1d1d1d
 client.urgent #1d1d1d #1d1d1d #1d1d1d #1d1d1d
