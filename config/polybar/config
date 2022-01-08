@@ -14,7 +14,7 @@ background = #292929
 background-alt = #727A8C
 foreground = #F2F2F2
 foreground-alt = #D9D9D9
-primary = #7dbf2f
+primary = #01BABF
 secondary = #BFA62A
 alert = #e65e70
 
@@ -110,7 +110,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #7dbf2f
+format-underline = #01BABF
 
 label = %date% %time%
 

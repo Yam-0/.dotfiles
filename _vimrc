@@ -157,10 +157,6 @@ vmap <c-c> <esc>
 omap <c-c> <esc>
 tmap <c-c> <C-\><C-n>
 
-" Quick escape
-imap jk <esc>
-imap kj <esc>
-
 " Misc
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>m :MaximizerToggle<CR>
@@ -271,6 +267,13 @@ augroup end
 " Behave Nerdtree!
 let NERDTreeMapCustomOpen='l'
 let NERDTreeMapCloseDir='h'
+
+" Spellcheck
+nnoremap <leader>cc :set spell spelllang=sv<cr>
+nnoremap <leader>cC :set nospell<cr>
+nnoremap <leader>cl ]s
+nnoremap <leader>ch [s
+nnoremap <leader>cw z=
 
 " Git
 nmap ghs <Plug>(GitGutterStageHunk)
