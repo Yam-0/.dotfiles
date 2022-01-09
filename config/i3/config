@@ -13,7 +13,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -51,7 +51,7 @@ bindsym $mod+space floating toggle
 bindsym $mod+Shift+space focus mode_toggle
 
 # Lock screen
-bindsym $mod+x exec $HOME/.bin/scripts/lock.sh
+bindsym $mod+x exec --no-startup-id $HOME/.bin/scripts/lock.sh
 
 # Workspace name definitions
 set $ws1 "1"
@@ -146,3 +146,6 @@ exec_always /home/tage/.screenlayout/scaled.sh
 
 # Display wallpaper
 exec_always --no-startup-id ~/.config/nitrogen/launch.sh
+
+# lock screen
+exec --no-startup-id ~/.bin/scripts/lock.sh
