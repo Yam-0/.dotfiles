@@ -223,8 +223,8 @@ nnoremap <a-h> ^
 nnoremap <a-l> g_
 vnoremap <a-h> ^
 vnoremap <a-l> g_
-inoremap <a-h> <c-o>^
-inoremap <a-l> <c-o>g_
+inoremap <a-h> <c-o>h
+inoremap <a-l> <c-o>l
 
 " Buffers
 nnoremap <silent> <leader>s :w<CR>:bp\|bd<space>#<CR>
