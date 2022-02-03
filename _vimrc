@@ -44,7 +44,7 @@ colorscheme material
 set termguicolors
 
 " Position in code
-set number
+set nonumber
 
 " Tabs, indenting and Wrapping
 set tabstop=4
@@ -187,8 +187,19 @@ nnoremap <leader>z :Goyo<CR>
 nnoremap <leader>Z :Goyo!<CR>
 
 " Relative numbers
-nnoremap <leader>r :set number relativenumber<CR>
-nnoremap <leader>R :set number norelativenumber<CR>
+nnoremap <leader>r :set number norelativenumber<CR>
+nnoremap <leader>R :set nonumber norelativenumber<CR>
+
+nmap <leader>1 <Plug>BufTabLine.Go(1)
+nmap <leader>2 <Plug>BufTabLine.Go(2)
+nmap <leader>3 <Plug>BufTabLine.Go(3)
+nmap <leader>4 <Plug>BufTabLine.Go(4)
+nmap <leader>5 <Plug>BufTabLine.Go(5)
+nmap <leader>6 <Plug>BufTabLine.Go(6)
+nmap <leader>7 <Plug>BufTabLine.Go(7)
+nmap <leader>8 <Plug>BufTabLine.Go(8)
+nmap <leader>9 <Plug>BufTabLine.Go(9)
+nmap <leader>0 <Plug>BufTabLine.Go(10)
 
 " Add empty lines
 nnoremap <c-j> o<esc>cc<esc>
@@ -231,6 +242,7 @@ nnoremap <silent> <leader>s :w<CR>:bp\|bd<space>#<CR>
 nnoremap <silent> <leader>d :bd<CR>
 nnoremap <silent> <leader>l :bnext<CR>
 nnoremap <silent> <leader>h :bNext<CR>
+nnoremap <leader>b :Buffers<CR>
 
 " Split resize
 nnoremap <silent> <Right> :vert res +3<CR>
@@ -248,6 +260,31 @@ nnoremap <leader>F :NERDTreeFind<CR>
 nnoremap <leader>p :cd %:p:h<CR>
 nnoremap <leader>V :e ~/_vimrc<CR>
 command! Reroot cd %:p:h
+
+let s:hidden_all = 0
+function! ToggleHiddenAll()
+    if s:hidden_all == 0
+        let s:hidden_all = 1
+        set noshowmode
+        set noruler
+        set laststatus=0
+        set noshowcmd
+		set nonumber
+		let g:buftabline_show=0
+    else
+        let s:hidden_all = 0
+        set showmode
+        set ruler
+        set laststatus=2
+        set showcmd
+		set number
+		let g:buftabline_show=2
+    endif
+
+	call buftabline#update(0)
+endfunction
+
+nnoremap <leader>t :call ToggleHiddenAll()<CR>
 
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1
