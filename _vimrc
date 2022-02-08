@@ -186,10 +186,6 @@ inoremap [, [],<Left><Left>
 nnoremap <leader>z :Goyo<CR>
 nnoremap <leader>Z :Goyo!<CR>
 
-" Relative numbers
-nnoremap <leader>r :set number norelativenumber<CR>
-nnoremap <leader>R :set nonumber norelativenumber<CR>
-
 nmap <leader>1 <Plug>BufTabLine.Go(1)
 nmap <leader>2 <Plug>BufTabLine.Go(2)
 nmap <leader>3 <Plug>BufTabLine.Go(3)
@@ -261,6 +257,24 @@ nnoremap <leader>p :cd %:p:h<CR>
 nnoremap <leader>V :e ~/_vimrc<CR>
 command! Reroot cd %:p:h
 
+" Number toggle
+let s:number_toggle = 0
+function! ToggleNumber()
+	if  s:number_toggle == 0
+		let s:number_toggle = 1
+		set nonumber norelativenumber
+	else
+		if  s:number_toggle == 1
+			let s:number_toggle = 2
+			set number norelativenumber
+		else
+			let s:number_toggle = 0
+			set number relativenumber
+		endif
+	endif
+endfunction
+nnoremap <leader>r :call ToggleNumber()<CR>
+
 let s:hidden_all = 0
 function! ToggleHiddenAll()
     if s:hidden_all == 0
@@ -269,7 +283,6 @@ function! ToggleHiddenAll()
         set noruler
         set laststatus=0
         set noshowcmd
-		set nonumber
 		let g:buftabline_show=0
     else
         let s:hidden_all = 0
@@ -277,14 +290,21 @@ function! ToggleHiddenAll()
         set ruler
         set laststatus=2
         set showcmd
-		set number
 		let g:buftabline_show=2
     endif
-
 	call buftabline#update(0)
 endfunction
-
 nnoremap <leader>t :call ToggleHiddenAll()<CR>
+
+augroup cmdline
+    autocmd!
+	function! EchoNothing(timer)
+		if s:hidden_all == 1
+			echo ''
+		endif
+	endfunction
+	autocmd CmdlineLeave * call timer_start(0, 'EchoNothing')
+augroup end
 
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1
