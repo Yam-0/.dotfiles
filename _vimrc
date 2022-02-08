@@ -258,7 +258,7 @@ nnoremap <leader>V :e ~/_vimrc<CR>
 command! Reroot cd %:p:h
 
 " Number toggle
-let s:number_toggle = 0
+let s:number_toggle = 1
 function! ToggleNumber()
 	if  s:number_toggle == 0
 		let s:number_toggle = 1
@@ -295,16 +295,6 @@ function! ToggleHiddenAll()
 	call buftabline#update(0)
 endfunction
 nnoremap <leader>t :call ToggleHiddenAll()<CR>
-
-augroup cmdline
-    autocmd!
-	function! EchoNothing(timer)
-		if s:hidden_all == 1
-			echo ''
-		endif
-	endfunction
-	autocmd CmdlineLeave * call timer_start(0, 'EchoNothing')
-augroup end
 
 " Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1
