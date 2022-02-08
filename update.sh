@@ -9,6 +9,7 @@ echo "";
 git pull origin main
 
 while true; do
+	echo "Fetch from repo or push to repo"
 	read -p "Updating dotfiles | [C]ANCEL | [F]ETCH | [P]USH : " cfp
 	case $cfp in
 		[Cc]* ) exit;;

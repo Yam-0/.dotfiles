@@ -28,7 +28,7 @@ font:
     style: Medium
   bold:
     family: fira code
-    style: SemiBold
+    style: Bold
   italic:
     family: fira code
     style: Italic
