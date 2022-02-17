@@ -347,7 +347,7 @@ command! EnterWriteMode :set lbr tw=60
 " Alternate between files
 nnoremap <leader>S :Alternate<CR>
 let g:AlternatePaths = ['./include', '..', '.']
-let g:AlternateExtensionMappings = [{'.cpp' : '.h', '.h' : '.hpp', '.hpp' : '.cpp'}, {'.c': '.h', '.h': '.c'}, {'.js': '.module.css', '.module.css': '.js'}]
+let g:AlternateExtensionMappings = [{'.cpp' : '.h', '.h' : '.hpp', '.hpp' : '.cpp'}, {'.c': '.h', '.h': '.c'}, {'.js': '.module.css', '.module.css': '.js'}, {'.js': '.module.scss', '.module.scss': '.js'}]
 
 " Lightline configuration
 let g:lightline = { 'colorcheme': 'material_vim' }
