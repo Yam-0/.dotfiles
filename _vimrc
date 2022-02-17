@@ -134,6 +134,7 @@ nnoremap <leader>ca :CocAction<CR>
 
 " Quick fix
 nmap <leader>cf :CocFix<CR>
+nmap <leader>ca :CocAction<CR>
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
 if has('nvim-0.4.0') || has('patch-8.2.0750')
