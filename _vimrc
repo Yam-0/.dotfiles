@@ -1,36 +1,34 @@
 call plug#begin('~/.vim/plugged')
 
 " Code completion and linting
-	Plug 'neoclide/coc.nvim', {'branch': 'release'} " Autocomplete
+	Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP manager and completion
 	Plug 'dense-analysis/ale'						" Lint
 	Plug 'sheerun/vim-polyglot'						" Syntax highlighting language library
 	Plug 'bronson/vim-trailing-whitespace'			" Trim trailing whitespaces
 	Plug 'lervag/vimtex' 							" LaTeX
 	Plug 'alvan/vim-closetag' 	 					" HTML
-	Plug 'mattn/emmet-vim' 							" Emmets
+	Plug 'mattn/emmet-vim' 							" Emmet
 
 " File tree and fuzzy finder
 	Plug 'junegunn/fzf'								" Fuzzy file finder
-	Plug 'junegunn/fzf.vim' 						" Wrapper
+	Plug 'junegunn/fzf.vim' 						" FZF Wrapper
 	Plug 'preservim/nerdtree'						" File navigation
 
 " Other
-	Plug 'junegunn/goyo.vim' 						" Zen mode
-	Plug 'szw/vim-maximizer'						" Maximize
 	Plug 'ton/vim-alternate' 						" C utility
 	Plug 'airblade/vim-gitgutter' 					" Git diff
 	Plug 'tpope/vim-surround' 						" Change around word
 	Plug 'tpope/vim-commentary' 					" Comment utility
 	Plug 'tpope/vim-fugitive' 						" Git wrapper
-	Plug 'tpope/vim-eunuch' 						" Utility
+	Plug 'tpope/vim-eunuch' 						" Unix utility, SudoWrite!
 
 " Visual
 	Plug 'kaicataldo/material.vim' 					" Colorscheme
 	Plug 'itchyny/lightline.vim'					" Status line
 	Plug 'ap/vim-buftabline'						" Buffer tabs
-	Plug 'ap/vim-css-color' 						" Preview colors
 	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " Nerdtree colors
 	Plug 'ryanoasis/vim-devicons' 					" Icons
+	" Plug 'ap/vim-css-color' 						" Preview colors
 
 call plug#end()
 
@@ -73,7 +71,7 @@ set ic			" Ignore case
 set hlsearch	" Highlight search results
 
 " Misc
-set scrolloff=8
+set scrolloff=6
 set signcolumn=yes
 set title
 set nocompatible
@@ -86,7 +84,7 @@ set hidden 				" Keep buffer loaded when abandoned
 set guicursor=i:block 	" Force block cursor in insert mode
 set autoread 			" Autoload file changes
 set noshowmode
-set updatetime=300
+set updatetime=200
 
 " Autocomplete
 set completeopt=menuone
@@ -160,7 +158,6 @@ tmap <c-c> <C-\><C-n>
 
 " Misc
 nnoremap <leader><space> :nohlsearch<CR>
-nnoremap <leader>m :MaximizerToggle<CR>
 nnoremap <leader>w :FixWhitespace<CR>
 nnoremap Y y$
 imap <c-e> <c-y>,
@@ -172,7 +169,6 @@ nnoremap <C-f> :Lines<CR>
 " Auto pairs
 inoremap (<tab> ()<Left>
 inoremap {<tab> {}<Left>
-inoremap {<CR> {<CR>}<c-o>O
 inoremap [<tab> []<Left>
 inoremap "<tab> ""<Left>
 inoremap '<tab> ''<Left>
@@ -182,10 +178,6 @@ inoremap [; [];<Left><Left>
 inoremap (, (),<Left><Left>
 inoremap {, {},<Left><Left>
 inoremap [, [],<Left><Left>
-
-" Zen
-nnoremap <leader>z :Goyo<CR>
-nnoremap <leader>Z :Goyo!<CR>
 
 nmap <leader>1 <Plug>BufTabLine.Go(1)
 nmap <leader>2 <Plug>BufTabLine.Go(2)
@@ -209,16 +201,12 @@ imap <c-k> [
 imap <c-l> ]
 
 " Moving and copying lines
-vnoremap <silent> <a-j> :m '>+1<CR>gv=gv
-vnoremap <silent> <a-k> :m '<-2<CR>gv=gv
-inoremap <silent> <a-j> <esc>:m .+1<CR>==a
-inoremap <silent> <a-k> <esc>:m .-2<CR>==a
-nnoremap <silent> <a-j> :m .+1<CR>==
-nnoremap <silent> <a-k> :m .-2<CR>==
+vnoremap <a-j> :m '>+1<CR>gv=gv
+vnoremap <a-k> :m '<-2<CR>gv=gv
+nnoremap <a-j> :m .+1<CR>==
+nnoremap <a-k> :m .-2<CR>==
 vnoremap <a-J> y<esc>P==gv=gv
 vnoremap <a-K> y<esc>'>p==gv=gv
-inoremap <a-J> <esc>yyp==A
-inoremap <a-K> <esc>yyP==A
 nnoremap <a-J> yyp==
 nnoremap <a-K> yyP==
 nnoremap <Tab> >>
@@ -247,16 +235,10 @@ nnoremap <silent> <Left> :vert res -3<CR>
 nnoremap <silent> <Up> :res -1<CR>
 nnoremap <silent> <Down> :res +1<CR>
 
-" Build integration
-nnoremap <f4> :split<CR>:term<CR><insert>./run.*<CR>
-nnoremap <f5> :split<CR>:term<CR><insert>./build.*<CR>
-
 " File navigation
 nnoremap <leader>f :NERDTreeToggle<CR>
 nnoremap <leader>F :NERDTreeFind<CR>
-nnoremap <leader>p :cd %:p:h<CR>
 nnoremap <leader>V :e ~/_vimrc<CR>
-command! Reroot cd %:p:h
 
 " Number toggle
 let s:number_toggle = 1
@@ -331,9 +313,6 @@ nmap ghp <Plug>(GitGutterPreviewHunk)
 " Hide tilde
 hi NonText guifg=bg
 
-" Easy copy
-vnoremap <leader>C "+y
-
 " LaTeX
 nnoremap <leader>gg gqip
 let g:tex_flavor='latex'
@@ -341,8 +320,8 @@ let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 
 " Modes
-command! EnterNormalMode :set lbr!
-command! EnterWriteMode :set lbr tw=60
+command! NormalMode :set lbr!
+command! WriteMode :set lbr tw=60
 
 " Alternate between files
 nnoremap <leader>S :Alternate<CR>

@@ -24,17 +24,17 @@ scrolling:
 
 font:
   normal:
-    family: fira code
+    family: Fira Code
     style: Medium
   bold:
-    family: fira code
+    family: Hack Nerd Font Mono
     style: Bold
   italic:
-    family: fira code
+    family: Hack Nerd Font Mono
     style: Italic
 
   bold_italic:
-    family: fira code
+    family: Hack Nerd Font Mono
     style: Bold Italic
   size: 11.0
   offset:
