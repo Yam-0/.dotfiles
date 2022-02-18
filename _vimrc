@@ -160,7 +160,11 @@ tmap <c-c> <C-\><C-n>
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>w :FixWhitespace<CR>
 nnoremap Y y$
-imap <c-e> <c-y>,
+
+" Emmet
+let g:user_emmet_leader_key='<c-e>'
+imap <c-e>l <c-e>n
+imap <c-e>h <c-e>N
 
 " Fuzzy finder
 nnoremap <C-p> :FZF<CR>
@@ -228,6 +232,7 @@ nnoremap <silent> <leader>d :bd<CR>
 nnoremap <silent> <leader>l :bnext<CR>
 nnoremap <silent> <leader>h :bNext<CR>
 nnoremap <leader>b :Buffers<CR>
+nnoremap <c-b> <c-^>
 
 " Split resize
 nnoremap <silent> <Right> :vert res +3<CR>
