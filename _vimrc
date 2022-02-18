@@ -76,9 +76,9 @@ set signcolumn=yes
 set title
 set nocompatible
 set cursorline
-set showcmd
+set noshowcmd
 set showmatch 			" Highlight matching ([{}])
-set laststatus=2 		" Always display statusline
+set laststatus=0 		" Always display statusline
 set backspace=2 		" Free backspace
 set hidden 				" Keep buffer loaded when abandoned
 set guicursor=i:block 	" Force block cursor in insert mode
@@ -258,6 +258,7 @@ function! ToggleNumber()
 endfunction
 nnoremap <leader>r :call ToggleNumber()<CR>
 
+let g:buftabline_show=0
 let s:hidden_all = 0
 function! ToggleHiddenAll()
     if s:hidden_all == 0
