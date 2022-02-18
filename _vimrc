@@ -259,7 +259,7 @@ endfunction
 nnoremap <leader>r :call ToggleNumber()<CR>
 
 let g:buftabline_show=0
-let s:hidden_all = 0
+let s:hidden_all = 1
 function! ToggleHiddenAll()
     if s:hidden_all == 0
         let s:hidden_all = 1
