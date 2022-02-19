@@ -7,8 +7,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'bronson/vim-trailing-whitespace'			" Trim trailing whitespaces
 	Plug 'lervag/vimtex' 							" LaTeX
 	Plug 'alvan/vim-closetag' 	 					" HTML
-	Plug 'mattn/emmet-vim' 							" Emmet
-	Plug 'dcampos/nvim-snippy' 						" Snippet manager
 	Plug 'honza/vim-snippets' 						" Snippets
 
 " File tree and fuzzy finder
@@ -344,11 +342,9 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js'
 let g:closetag_shortcut = '>'
 
 " Snippet configuration
-imap <expr> <Tab> snippy#can_expand_or_advance() ? '<Plug>(snippy-expand-or-advance)' : '<Tab>'
-imap <expr> <S-Tab> snippy#can_jump(-1) ? '<Plug>(snippy-previous)' : '<S-Tab>'
-smap <expr> <Tab> snippy#can_jump(1) ? '<Plug>(snippy-next)' : '<Tab>'
-smap <expr> <S-Tab> snippy#can_jump(-1) ? '<Plug>(snippy-previous)' : '<S-Tab>'
-xmap <Tab> <Plug>(snippy-cut-text)
+imap <c-w> <Plug>(coc-snippets-expand-jump)
+let g:coc_snippet_next = '<tab>'
+let g:coc_snippet_prev = '<s-tab>'
 
 " Disable dev icons on windows
 if has('win32')
