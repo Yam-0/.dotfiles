@@ -8,6 +8,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'lervag/vimtex' 							" LaTeX
 	Plug 'alvan/vim-closetag' 	 					" HTML
 	Plug 'mattn/emmet-vim' 							" Emmet
+	Plug 'dcampos/nvim-snippy' 						" Snippet manager
+	Plug 'honza/vim-snippets' 						" Snippets
 
 " File tree and fuzzy finder
 	Plug 'junegunn/fzf'								" Fuzzy file finder
@@ -341,6 +343,14 @@ let g:lightline = { 'colorcheme': 'material_vim' }
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js'
 let g:closetag_shortcut = '>'
 
+" Snippet configuration
+imap <expr> <Tab> snippy#can_expand_or_advance() ? '<Plug>(snippy-expand-or-advance)' : '<Tab>'
+imap <expr> <S-Tab> snippy#can_jump(-1) ? '<Plug>(snippy-previous)' : '<S-Tab>'
+smap <expr> <Tab> snippy#can_jump(1) ? '<Plug>(snippy-next)' : '<Tab>'
+smap <expr> <S-Tab> snippy#can_jump(-1) ? '<Plug>(snippy-previous)' : '<S-Tab>'
+xmap <Tab> <Plug>(snippy-cut-text)
+
+" Disable dev icons on windows
 if has('win32')
 	let g:webdevicons_enable = 0
 end
