@@ -340,3 +340,7 @@ let g:lightline = { 'colorcheme': 'material_vim' }
 " Closetag configuration
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.js'
 let g:closetag_shortcut = '>'
+
+if has('win32')
+	let g:webdevicons_enable = 0
+end
