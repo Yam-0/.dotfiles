@@ -277,8 +277,8 @@ endfunction
 nnoremap <leader>t :call ToggleHiddenAll()<CR>
 
 " Start NERDTree when Vim is started without file arguments.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
 
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
@@ -341,3 +341,5 @@ let g:coc_snippet_prev = '<s-tab>'
 if has('win32')
 	let g:webdevicons_enable = 0
 end
+
+set shortmess=I
