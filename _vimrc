@@ -86,7 +86,7 @@ set guicursor=i:block 	" Force block cursor in insert mode
 set autoread 			" Autoload file changes
 set noshowmode
 set updatetime=200
-set timeoutlen=2000
+set timeoutlen=500
 
 " Autocomplete
 set completeopt=menuone
