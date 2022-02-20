@@ -127,22 +127,13 @@ endfunction
 " Rename symbol
 nmap <leader>cr <Plug>(coc-rename)
 
+" Quick action
 xmap <leader>ca <Plug>(coc-codeaction-selected)
 nnoremap <leader>ca :CocAction<CR>
+nmap <leader>ca :CocAction<CR>
 
 " Quick fix
 nmap <leader>cf :CocFix<CR>
-nmap <leader>ca :CocAction<CR>
-
-" Remap <C-f> and <C-b> for scroll float windows/popups.
-if has('nvim-0.4.0') || has('patch-8.2.0750')
-	nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-	nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-	inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-	inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-	vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-	vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-endif
 
 " ------------------------------- Lint, autocompletion etc -------------------------------
 
