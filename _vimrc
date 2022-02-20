@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'lervag/vimtex' 							" LaTeX
 	Plug 'alvan/vim-closetag' 	 					" HTML
 	Plug 'honza/vim-snippets' 						" Snippets
+	Plug 'mattn/emmet-vim' 							" Emmet
 
 " File tree and fuzzy finder
 	Plug 'junegunn/fzf'								" Fuzzy file finder
@@ -85,6 +86,7 @@ set guicursor=i:block 	" Force block cursor in insert mode
 set autoread 			" Autoload file changes
 set noshowmode
 set updatetime=200
+set timeoutlen=2000
 
 " Autocomplete
 set completeopt=menuone
@@ -335,7 +337,7 @@ let g:closetag_shortcut = '>'
 " Snippet configuration
 imap <c-w> <Plug>(coc-snippets-expand-jump)
 let g:coc_snippet_next = '<tab>'
-let g:coc_snippet_prev = '<s-tab>'
+let g:coc_snippet_prev = 's-tab'
 
 " Disable dev icons on windows
 if has('win32')
