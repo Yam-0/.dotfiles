@@ -29,7 +29,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'ap/vim-buftabline'						" Buffer tabs
 	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " Nerdtree colors
 	Plug 'ryanoasis/vim-devicons' 					" Icons
-	" Plug 'ap/vim-css-color' 						" Preview colors
+	Plug 'ap/vim-css-color' 						" Preview colors
 
 call plug#end()
 
