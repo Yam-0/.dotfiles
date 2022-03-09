@@ -344,4 +344,4 @@ if has('win32')
 	let g:webdevicons_enable = 0
 end
 
-set shortmess=I
+set shortmess+=O
