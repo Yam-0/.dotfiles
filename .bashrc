@@ -14,9 +14,9 @@ date +'%A %H:%m'
 # PS1='[ \W ] : '
 if [ "$EUID" -ne 0 ]
 then
-	PS1='\n\e[0;34mTAGE [\e[m \W \e[0;34m]\e[m : \e[0;33m'
+	PS1='\n\e[0;34mTAGE [\e[m \W \e[0;34m]\e[m : '
 else
-	PS1='\n\e[0;31mROOT [\e[m \W \e[0;31m]\e[m : \e[0;33m'
+	PS1='\n\e[0;31mROOT [\e[m \W \e[0;31m]\e[m : '
 fi
 
 # Bindings
