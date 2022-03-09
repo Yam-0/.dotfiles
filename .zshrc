@@ -7,7 +7,7 @@
 
 # Startup
 clear
-echo ZSH - $(date +'%A %H:%m')
+date +'%A %H:%m'
 
 preexec () { echo -ne "\e[0m" }
 
@@ -23,7 +23,7 @@ prompt()
 	if [ "$EUID" -ne 0 ]
 	then
 		prompt_user="TAGE"
-		prompt_color="blue"
+		prompt_color="cyan"
 	fi
 
 	branch=$(current_branch)
