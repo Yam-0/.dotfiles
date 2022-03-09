@@ -5,6 +5,25 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="robbyrussell"
+
+CASE_SENSITIVE="false"
+HYPHEN_INSENSITIVE="false"
+
+zstyle ':omz:update' mode reminder
+zstyle ':omz:update' frequency 7
+
+ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+HIST_STAMPS="dd.m.yyyy"
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
 # Startup
 clear
 date +'%A %H:%m'
