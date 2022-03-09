@@ -5,30 +5,29 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Startup
 clear
-
-# Date
-date +'%A %H:%m'
-
-autoload -U colors && colors
+echo ZSH - $(date +'%A %H:%m')
 
 preexec () { echo -ne "\e[0m" }
+precmd () { echo -ne '\n' }
 
 # PS1='[ \W ] : '
 if [ "$EUID" -ne 0 ]
 then
-	PS1=$'\n\e[0;34mTAGE [\e[m %1~ \e[0;34m]\e[m : \e[0;33m'
+	PROMPT="%F{blue}TAGE [ %F{256}%1~ %F{blue}] %F{256}: "
 else
-	PS1=$'\n\e[0;31mROOT [\e[m %1~ \e[0;31m]\e[m : \e[0;33m'
+	PROMPT="%F{red}ROOT [ %F{256}%1~ %F{red}] %F{256}: "
 fi
 
-# Don't push to history if command starts with space
-export HISTIGNORE=' *'
 
 alias ls='ls --color=auto -a'
 alias v='nvim .'
 alias nav='. ~/.bin/scripts/nav.sh'
 alias fuzzy='. ~/.bin/scripts/fuzzy.sh'
 
+export ARCHFLAGS="-arch x86_64"
+export LANG=en_US.UTF-8
 export VISUAL=nvim;
 export EDITOR=nvim;
+export HISTIGNORE=' *' # Don't push to history if command starts with space
