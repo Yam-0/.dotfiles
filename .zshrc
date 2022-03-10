@@ -8,8 +8,6 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="robbyrussell"
-
 CASE_SENSITIVE="false"
 HYPHEN_INSENSITIVE="false"
 
@@ -55,12 +53,12 @@ prompt()
 			branch_color="green"
 		fi
 
-		git_prompt=" %F{$prompt_color}[%F{$branch_color} $branch* %F{$prompt_color}] "
+		git_prompt="%F{$prompt_color}on %F{$branch_color}$branch* "
 	else
-		git_prompt=' '
+		git_prompt=''
 	fi
 
-	PROMPT="%F{$prompt_color}$prompt_user [ %F{256}%1~ %F{$prompt_color}]$git_prompt%F{256}: "
+	PROMPT="%F{$prompt_color}$prompt_user [ %F{256}%1~ $git_prompt%F{$prompt_color}] %F{256}: "
 }
 
 
