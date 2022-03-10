@@ -52,7 +52,6 @@ prompt()
 		then
 			branch_color="green"
 		fi
-
 		git_prompt="%F{$prompt_color}on %F{$branch_color}$branch* "
 	else
 		git_prompt=''
