@@ -337,7 +337,7 @@ let g:closetag_shortcut = '>'
 " Snippet configuration
 imap <c-w> <Plug>(coc-snippets-expand-jump)
 let g:coc_snippet_next = '<tab>'
-let g:coc_snippet_prev = 's-tab'
+let g:coc_snippet_prev = '<s-tab>'
 
 " Disable dev icons on windows
 if has('win32')

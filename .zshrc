@@ -57,13 +57,15 @@ prompt()
 		git_prompt=''
 	fi
 
-	PROMPT="%F{$prompt_color}$prompt_user [ %F{256}%1~ $git_prompt%F{$prompt_color}] %F{256}: "
+	# PROMPT="%F{$prompt_color}$prompt_user [ %F{256}%1~ $git_prompt%F{$prompt_color}] %F{256}: "
+	PROMPT="%F{$prompt_color}[ %F{256}%1~ $git_prompt%F{$prompt_color}] %F{256}: "
 }
 
 
 alias ls='ls --color=auto -a'
 alias v='nvim .'
 alias nav='. ~/.bin/scripts/nav.sh'
+alias re='~/Projects/C/r/r'
 alias fuzzy='. ~/.bin/scripts/fuzzy.sh'
 alias resource='. $HOME/.zshrc'
 
