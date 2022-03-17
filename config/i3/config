@@ -26,6 +26,9 @@ bindsym $mod+Shift+n scratchpad show
 bindsym $mod+d exec --no-startup-id ~/Projects/.dotfiles/config/rofi/drun.sh
 bindsym $mod+Shift+d exec --no-startup-id ~/Projects/.dotfiles/config/rofi/run.sh
 
+# Battery warning
+exec --no-startup-id i3-battery-popup -n -D -L 20 -l 10 -t 30s -m "Lmao ladda"
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
