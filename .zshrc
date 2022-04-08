@@ -14,7 +14,8 @@ HYPHEN_INSENSITIVE="false"
 zstyle ':omz:update' mode reminder
 zstyle ':omz:update' frequency 7
 
-ENABLE_CORRECTION="true"
+setopt globdots
+ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="dd.m.yyyy"
 
