@@ -25,7 +25,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Startup
 clear
-date +'%A %H:%m'
+date +'%A %H:%M'
 
 preexec () { echo -ne "\e[0m" }
 
