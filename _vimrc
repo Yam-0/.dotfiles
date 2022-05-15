@@ -218,6 +218,12 @@ vnoremap <a-h> ^
 vnoremap <a-l> g_
 inoremap <a-h> <c-o>h
 inoremap <a-l> <c-o>l
+inoremap <a-w> <c-o>w
+inoremap <a-W> <c-o>W
+inoremap <a-b> <c-o>b
+inoremap <a-B> <c-o>B
+inoremap <a-e> <esc>el<insert>
+inoremap <a-E> <esc>El<insert>
 
 " Buffers
 nnoremap <silent> <leader>s :w<CR>:bp\|bd<space>#<CR>
@@ -311,6 +317,12 @@ nmap ghp <Plug>(GitGutterPreviewHunk)
 
 " Hide tilde
 hi NonText guifg=bg
+
+" ALE, Prettier
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
+\}
 
 " LaTeX
 nnoremap <leader>gg gqip
