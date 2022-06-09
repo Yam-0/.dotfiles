@@ -38,7 +38,7 @@ line-size = 2
 line-color = #ffffff
 
 font-0 = Iosevka:size=10;3
-font-1 = Font Awesome 5 Free:size=10:1
+font-1 = Font Awesome 5 Free,Font Awesome 5 Free Regular:style=Solid:size10;3
 
 bottom = false
 module-margin-right = 1
