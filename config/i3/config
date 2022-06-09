@@ -155,17 +155,12 @@ exec_always /home/tage/.screenlayout/scaled.sh
 exec_always --no-startup-id ~/.config/nitrogen/launch.sh
 
 # lock screen
-exec --no-startup-id ~/.bin/scripts/lock.sh
+# exec --no-startup-id ~/.bin/scripts/lock.sh
 
 # Layout
-exec --no-startup-id i3-msg 'workspace 1:1; append_layout /home/tage/.bin/workspace-1.json'
-exec --no-startup-id i3-msg 'workspace 1:1; exec --no-startup-id /usr/bin/alacritty --title "CLOCK" -e /home/tage/.bin/scripts/clock.sh'
-exec --no-startup-id i3-msg 'workspace 1:1; exec --no-startup-id /usr/bin/alacritty --title "TREE" -e /home/tage/.bin/scripts/tree.sh'
 exec --no-startup-id i3-msg 'workspace 1:1; exec --no-startup-id /usr/bin/alacritty --title "TERMINAL"'
 
 exec --no-startup-id i3-msg 'workspace 2:2; exec /usr/bin/firefox'
-
-exec --no-startup-id i3-msg 'workspace 3:3; append_layout /home/tage/.bin/workspace-3.json'
 exec --no-startup-id i3-msg 'workspace 3:3; exec --no-startup-id /usr/bin/spotify'
 exec --no-startup-id i3-msg 'workspace 3:3; exec --no-startup-id /usr/bin/discord'
 

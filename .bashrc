@@ -9,7 +9,7 @@ alias ls='ls --color=auto -a'
 reset
 
 # Date
-date +'%A %H:%m'
+date +'%A %H:%M'
 
 # PS1='[ \W ] : '
 if [ "$EUID" -ne 0 ]

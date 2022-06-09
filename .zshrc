@@ -32,6 +32,10 @@ preexec () { echo -ne "\e[0m" }
 [ ${ZSH_VERSION} ] && precmd() { prompt; }
 [ ${BASH_VERSION} ] && PROMPT_COMMAND=prompt
 
+parse_git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
 prompt()
 {
 	echo -ne '\n'
@@ -44,7 +48,7 @@ prompt()
 		prompt_color="blue"
 	fi
 
-	branch=$(current_branch)
+	branch=$(parse_git_branch)
 	branch_color="red"
 
 	if [ $branch ]
@@ -121,3 +125,6 @@ ZSH_HIGHLIGHT_STYLES[redirection]='fg=red'
 ZSH_HIGHLIGHT_STYLES[comment]='fg=green'
 ZSH_HIGHLIGHT_STYLES[arg0]='fg=256'
 ZSH_HIGHLIGHT_STYLES[default]='fg=256'
+
+# Autostart X
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
