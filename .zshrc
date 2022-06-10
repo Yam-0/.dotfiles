@@ -19,7 +19,11 @@ ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="dd.m.yyyy"
 
-plugins=(sudo npm git zsh-autosuggestions)
+plugins=(sudo npm git zsh-autosuggestions vi-mode)
+
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
+
+bindkey '^ ' autosuggest-accept
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,6 +87,7 @@ export HISTIGNORE=' *' # Don't push to history if command starts with space
 source /home/tage/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
+bindkey -v
 typeset -A ZSH_HIGHLIGHT_STYLES
 
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=red'
