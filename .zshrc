@@ -19,7 +19,7 @@ ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="dd.m.yyyy"
 
-plugins=(git)
+plugins=(sudo npm git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
