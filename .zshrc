@@ -28,7 +28,11 @@ bindkey '^ ' autosuggest-accept
 source $ZSH/oh-my-zsh.sh
 
 # Startup
-date +'%A %H:%M'
+cdate=$(date)
+cbat=$(cat /sys/class/power_supply/BAT0/capacity)
+echo "Date: $cdate"
+echo "Bat0: $cbat%"
+# date +'%A %H:%M'
 
 preexec () { echo -ne "\e[0m" }
 
