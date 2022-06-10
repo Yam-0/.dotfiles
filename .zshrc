@@ -28,7 +28,6 @@ bindkey '^ ' autosuggest-accept
 source $ZSH/oh-my-zsh.sh
 
 # Startup
-clear
 date +'%A %H:%M'
 
 preexec () { echo -ne "\e[0m" }
@@ -43,6 +42,7 @@ parse_git_branch() {
 prompt()
 {
 	echo -ne '\n'
+	ctime=$(date +'%H:%M')
 
 	prompt_color="red"
 	prompt_user="ROOT"
@@ -67,7 +67,7 @@ prompt()
 	fi
 
 	# PROMPT="%F{$prompt_color}$prompt_user [ %F{256}%1~ $git_prompt%F{$prompt_color}] %F{256}: "
-	PROMPT="%F{$prompt_color}[ %F{256}%1~ $git_prompt%F{$prompt_color}] %F{256}: "
+	PROMPT="$ctime %F{$prompt_color}$prompt_user [ %F{256}%1~ $git_prompt%F{$prompt_color}] %F{256}: "
 }
 
 
