@@ -26,9 +26,6 @@ bindsym $mod+Shift+n scratchpad show
 bindsym $mod+d exec --no-startup-id ~/Projects/.dotfiles/config/rofi/drun.sh
 bindsym $mod+Shift+d exec --no-startup-id ~/Projects/.dotfiles/config/rofi/run.sh
 
-# Battery warning
-exec --no-startup-id i3-battery-popup -n -D -L 20 -l 10 -t 30s -m "Lmao ladda"
-
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -129,8 +126,6 @@ exec_always --no-startup-id ~/Projects/.dotfiles/config/picom/launch.sh
 set $mod Mod4
 set $inner_gaps 4
 set $outer_gaps 0
-# set $inner_gaps 0
-# set $outer_gaps 0
 
 # Colors
 client.focused #2e2e2e #2e2e2e #2e2e2e #2e2e2e
@@ -149,13 +144,9 @@ exec_always --no-startup-id ~/Projects/.dotfiles/config/polybar/launch.sh
 
 # Monitor setup
 exec_always /home/tage/.screenlayout/scaled.sh
-# exec_always /home/tage/.screenlayout/desktop.sh
 
 # Display wallpaper
 exec_always --no-startup-id ~/.config/nitrogen/launch.sh
-
-# lock screen
-# exec --no-startup-id ~/.bin/scripts/lock.sh
 
 # Layout
 exec --no-startup-id i3-msg 'workspace 1:1; exec --no-startup-id /usr/bin/alacritty --title "TERMINAL"'

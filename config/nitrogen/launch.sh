@@ -1,3 +1,2 @@
-#!
-sleep 2.0
+#!/bin/zsh
 nitrogen --restore
