@@ -18,9 +18,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP manager and completion
 	Plug 'dense-analysis/ale'						" Lint
 	Plug 'sheerun/vim-polyglot'						" Syntax highlighting language library
-	Plug 'bronson/vim-trailing-whitespace'			" Trim trailing whitespaces
 	Plug 'lervag/vimtex' 							" LaTeX
-	Plug 'alvan/vim-closetag' 	 					" HTML
 	Plug 'honza/vim-snippets' 						" Snippets
 	Plug 'mattn/emmet-vim' 							" Emmet
 
@@ -37,6 +35,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'tpope/vim-fugitive' 						" Git wrapper
 	Plug 'tpope/vim-eunuch' 						" Unix utility, SudoWrite!
 	Plug 'mhinz/vim-startify' 						" Start screen
+	Plug 'bronson/vim-trailing-whitespace'			" Trim trailing whitespaces
+	Plug 'alvan/vim-closetag' 	 					" HTML
 
 	" Visual
 	Plug 'kaicataldo/material.vim' 					" Colorscheme
@@ -44,6 +44,5 @@ call plug#begin('~/.vim/plugged')
 	Plug 'ap/vim-buftabline'						" Buffer tabs
 	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " Nerdtree colors
 	Plug 'ryanoasis/vim-devicons' 					" Icons
-	Plug 'ap/vim-css-color' 						" Preview colors
 
 call plug#end()

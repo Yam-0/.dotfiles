@@ -1,6 +1,5 @@
 " General
 source $HOME/Projects/.dotfiles/config/nvim/plugins.vim
-source $HOME/Projects/.dotfiles/config/nvim/plugins.vim
 source $HOME/Projects/.dotfiles/config/nvim/settings.vim
 source $HOME/Projects/.dotfiles/config/nvim/variables.vim
 source $HOME/Projects/.dotfiles/config/nvim/functions.vim
