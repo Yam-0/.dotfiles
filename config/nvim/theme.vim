@@ -10,5 +10,8 @@ set termguicolors
 " Hide tilde
 hi NonText guifg=bg
 
+" Hide background
+" hi Normal guibg=NONE ctermbg=NONE
+
 " Lightline
 let g:lightline = { 'colorcheme': 'material_vim' }
