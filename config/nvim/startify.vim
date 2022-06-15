@@ -16,8 +16,10 @@ let g:startify_lists = [
 let g:startify_use_unicode = 1
 
 let g:startify_custom_header = [
-	\ '       _  __             _     ',
-	\ '      / |/ /__ ___ _  __(_)_ _ ',
+	\ '       _  __             _',
+	\ '      / |/ /__ ___ _  __(_)_ _',
 	\ '     /    / -_) _ \ |/ / /  ` \',
 	\ '    /_/|_/\__/\___/___/_/_/_/_/',
 	\ ]
+
+nnoremap <c-n> :Startify<cr>
