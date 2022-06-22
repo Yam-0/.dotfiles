@@ -3,7 +3,6 @@ nmap <c-c> <esc>
 imap <c-c> <esc>
 vmap <c-c> <esc>
 omap <c-c> <esc>
-tmap <c-c> <C-\><C-n>
 
 " escape
 imap jk <esc>
@@ -30,17 +29,6 @@ inoremap [; [];<Left><Left>
 inoremap (, (),<Left><Left>
 inoremap {, {},<Left><Left>
 inoremap [, [],<Left><Left>
-
-nmap <leader>1 <Plug>BufTabLine.Go(1)
-nmap <leader>2 <Plug>BufTabLine.Go(2)
-nmap <leader>3 <Plug>BufTabLine.Go(3)
-nmap <leader>4 <Plug>BufTabLine.Go(4)
-nmap <leader>5 <Plug>BufTabLine.Go(5)
-nmap <leader>6 <Plug>BufTabLine.Go(6)
-nmap <leader>7 <Plug>BufTabLine.Go(7)
-nmap <leader>8 <Plug>BufTabLine.Go(8)
-nmap <leader>9 <Plug>BufTabLine.Go(9)
-nmap <leader>0 <Plug>BufTabLine.Go(10)
 
 " Add empty lines
 nnoremap <c-j> o<esc>cc<esc>
@@ -106,13 +94,6 @@ nnoremap <leader>r :call ToggleNumber()<CR>
 
 " Statusline toggle
 nnoremap <leader>t :call ToggleHiddenAll()<CR>
-
-" Spellcheck
-nnoremap <leader>cc :set spell spelllang=sv<cr>
-nnoremap <leader>cC :set nospell<cr>
-nnoremap <leader>cl ]s
-nnoremap <leader>ch [s
-nnoremap <leader>cw z=
 
 " Git
 nmap ghs <Plug>(GitGutterStageHunk)

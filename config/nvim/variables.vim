@@ -25,3 +25,8 @@ let g:coc_snippet_prev = '<s-tab>'
 if has('win32')
 	let g:webdevicons_enable = 0
 end
+
+" Floaterm
+let g:floaterm_width = 0.8
+let g:floaterm_height = 0.8
+let g:floaterm_keymap_toggle = '<c-t>'

@@ -12,10 +12,10 @@ set nowrap
 set belloff=all
 
 " Undo and disable backups
-set nobackup
-set nowritebackup
 set undodir=~/.vim/undodir
 set undofile
+set nobackup
+set nowritebackup
 
 " File encoding
 set encoding=utf-8
@@ -31,7 +31,6 @@ set hlsearch	" Highlight search results
 set scrolloff=6
 set signcolumn=yes
 set title
-set cursorline
 set noshowcmd
 set showmatch 			" Highlight matching ([{}])
 set laststatus=0 		" Always display statusline
@@ -48,3 +47,4 @@ set wildmenu
 
 " Info filter
 set shortmess+=O
+set shortmess+=c

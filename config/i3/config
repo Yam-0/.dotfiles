@@ -148,18 +148,17 @@ exec_always /home/tage/.screenlayout/scaled.sh
 # Display wallpaper
 exec_always --no-startup-id ~/.config/nitrogen/launch.sh
 
+# Restore pywal theme
+exec_always --no-startup-id wal -R
+
 for_window [title="TERMINAL"] floating enable
 
 for_window [class="firefox"] move to workspace $ws2
 for_window [class="Spotify"] move to workspace $ws3
 for_window [class="discord"] move to workspace $ws3
-for_window [title="RANGER"] move to workspace $ws4
-for_window [title="HTOP"] move to workspace $ws5
 
 # Layout
 exec --no-startup-id i3-msg 'exec --no-startup-id /usr/bin/alacritty --title "TERMINAL1"'
-exec --no-startup-id i3-msg 'exec --no-startup-id /home/tage/.bin/scripts/ranger.sh'
-exec --no-startup-id i3-msg 'exec --no-startup-id /home/tage/.bin/scripts/htop.sh'
 exec --no-startup-id i3-msg 'exec /usr/bin/firefox'
 exec --no-startup-id i3-msg 'exec --no-startup-id /usr/bin/spotify'
 exec --no-startup-id i3-msg 'exec --no-startup-id /usr/bin/discord'

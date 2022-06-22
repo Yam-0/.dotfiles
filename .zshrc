@@ -30,8 +30,8 @@ source $ZSH/oh-my-zsh.sh
 # Startup
 cdate=$(date)
 cbat=$(cat /sys/class/power_supply/BAT0/capacity)
-echo "Date: $cdate"
-echo "Bat0: $cbat%"
+# echo "Date: $cdate"
+# echo "Bat0: $cbat%"
 # date +'%A %H:%M'
 
 preexec () { echo -ne "\e[0m" }
@@ -45,7 +45,7 @@ parse_git_branch() {
 
 prompt()
 {
-	echo -ne '\n'
+	# echo -ne '\n'
 	ctime=$(date +'%H:%M')
 
 	prompt_color="red"
@@ -90,6 +90,9 @@ export HISTIGNORE=' *' # Don't push to history if command starts with space
 
 source /home/tage/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+# Apply Theme
+(cat ~/.cache/wal/sequences &)
 
 bindkey -v
 typeset -A ZSH_HIGHLIGHT_STYLES

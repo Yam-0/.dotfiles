@@ -30,13 +30,7 @@ function! s:show_documentation()
 	endif
 endfunction
 
-" Rename symbol
+" Code Actions
 nmap <leader>cr <Plug>(coc-rename)
-
-" Quick action
-xmap <leader>ca <Plug>(coc-codeaction-selected)
-nnoremap <leader>ca :CocAction<CR>
 nmap <leader>ca :CocAction<CR>
-
-" Quick fix
 nmap <leader>cf :CocFix<CR>
