@@ -1,6 +1,6 @@
 if empty(glob('~/.vim/autoload/plug.vim'))
 	if has('win32')
-		echo ('Install plug!')
+
 	else
 		silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
 			\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
