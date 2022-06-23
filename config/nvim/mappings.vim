@@ -15,7 +15,7 @@ nnoremap Y y$
 
 " Fuzzy finder
 nnoremap <C-p> :FZF<CR>
-nnoremap <C-f> :Lines<CR>
+nnoremap <C-f> :BLines<CR>
 
 " Auto pairs
 inoremap (<tab> ()<Left>

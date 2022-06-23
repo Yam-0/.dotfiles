@@ -24,7 +24,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'mattn/emmet-vim' 							" Emmet
 
 	" File tree and fuzzy finder
-	Plug 'junegunn/fzf'								" Fuzzy file finder
 	Plug 'junegunn/fzf.vim' 						" FZF Wrapper
 	Plug 'preservim/nerdtree'						" File navigation
 
