@@ -18,6 +18,8 @@ hi clear SignColumn
 " Hide cursorline
 hi clear Cursorline
 
+hi clear TabLineFill
+
 " Hide background
 hi Normal guibg=NONE ctermbg=NONE
 

@@ -40,6 +40,10 @@ call plug#begin('~/.vim/plugged')
 	Plug 'alvan/vim-closetag' 	 					" HTML
 	Plug 'voldikss/vim-floaterm' 					" Floating terminal
 
+	" Folding
+	Plug 'kevinhwang91/promise-async'
+	Plug 'kevinhwang91/nvim-ufo'
+
 	" Visual
 	Plug 'kaicataldo/material.vim' 					" Colorscheme
 	Plug 'dylanaraps/wal.vim' 						" Pywal Colorscheme

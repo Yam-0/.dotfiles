@@ -8,6 +8,9 @@ set smartindent
 set autoindent
 set nowrap
 
+" Mouse
+set mouse=a
+
 " No damn bells
 set belloff=all
 
@@ -16,6 +19,9 @@ set undodir=~/.vim/undodir
 set undofile
 set nobackup
 set nowritebackup
+
+" Redawing
+set lazyredraw
 
 " File encoding
 set encoding=utf-8
