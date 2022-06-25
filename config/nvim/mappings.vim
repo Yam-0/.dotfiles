@@ -4,10 +4,6 @@ imap <c-c> <esc>
 vmap <c-c> <esc>
 omap <c-c> <esc>
 
-" escape
-imap jk <esc>
-imap kj <esc>
-
 " Misc
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>w :FixWhitespace<CR>
@@ -41,6 +37,8 @@ imap <c-k> [
 imap <c-l> ]
 nmap <c-h> {
 nmap <c-l> }
+vmap <c-h> {
+vmap <c-l> }
 
 " Moving and copying lines
 vnoremap <a-j> :m '>+1<CR>gv=gv
@@ -88,9 +86,6 @@ nnoremap <silent> <Down> :res +1<CR>
 
 " File navigation
 nnoremap <leader>f :NERDTreeToggle<CR>
-
-" Number toggle
-nnoremap <leader>r :call ToggleNumber()<CR>
 
 " Statusline toggle
 nnoremap <leader>t :call ToggleHiddenAll()<CR>

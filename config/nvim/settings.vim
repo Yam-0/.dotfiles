@@ -1,5 +1,5 @@
 " Position in code
-set nonumber
+set number norelativenumber
 
 " Tabs, indenting and Wrapping
 set tabstop=4
@@ -35,7 +35,7 @@ set hlsearch	" Highlight search results
 
 " Misc
 set scrolloff=6
-set signcolumn=yes
+set signcolumn=number
 set title
 set noshowcmd
 set showmatch 			" Highlight matching ([{}])

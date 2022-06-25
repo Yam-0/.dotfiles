@@ -1,20 +1,3 @@
-" Number toggle
-let s:number_toggle = 1
-function! ToggleNumber()
-	if  s:number_toggle == 0
-		let s:number_toggle = 1
-		set nonumber norelativenumber
-	else
-		if  s:number_toggle == 1
-			let s:number_toggle = 2
-			set number norelativenumber
-		else
-			let s:number_toggle = 0
-			set number relativenumber
-		endif
-	endif
-endfunction
-
 " Statusline toggle
 let g:buftabline_show=0
 let s:hidden_all = 1
