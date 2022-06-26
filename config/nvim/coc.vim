@@ -69,3 +69,8 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 " Use CTRL-S for selections ranges.
 nmap <silent> <C-s> <Plug>(coc-range-select)
 xmap <silent> <C-s> <Plug>(coc-range-select)
+
+" ==========================================================================
+" Extensions
+" ==========================================================================
+let g:coc_global_extensions=[ 'coc-clangd', 'coc-sh', 'coc-html', 'coc-css', 'coc-json', 'coc-tsserver', 'coc-vimlsp', 'coc-snippets', 'coc-python', 'coc-cl', 'coc-docker', 'coc-tabnine' ]
