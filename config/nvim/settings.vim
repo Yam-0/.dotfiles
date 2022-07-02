@@ -39,7 +39,6 @@ set signcolumn=number
 set title
 set noshowcmd
 set showmatch 			" Highlight matching ([{}])
-set laststatus=0 		" Always display statusline
 set backspace=2 		" Free backspace
 set hidden 				" Keep buffer loaded when abandoned
 set autoread 			" Autoload file changes

@@ -21,11 +21,6 @@ let g:closetag_shortcut = '>'
 let g:coc_snippet_next = '<tab>'
 let g:coc_snippet_prev = '<s-tab>'
 
-" Disable dev icons on windows
-if has('win32')
-	let g:webdevicons_enable = 0
-end
-
 " Floaterm
 let g:floaterm_width = 0.8
 let g:floaterm_height = 0.8

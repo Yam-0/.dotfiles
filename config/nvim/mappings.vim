@@ -87,9 +87,6 @@ nnoremap <silent> <Down> :res +1<CR>
 " File navigation
 nnoremap <leader>f :NERDTreeToggle<CR>
 
-" Statusline toggle
-nnoremap <leader>t :call ToggleHiddenAll()<CR>
-
 " Git
 nmap ghs <Plug>(GitGutterStageHunk)
 nmap ghu <Plug>(GitGutterUndoHunk)
@@ -97,9 +94,6 @@ nmap ghp <Plug>(GitGutterPreviewHunk)
 
 " Alternate between files
 nnoremap <leader>S :Alternate<CR>
-
-" Text block
-nnoremap <leader>gg gqip
 
 " Snippets
 imap <c-w> <Plug>(coc-snippets-expand-jump)

@@ -24,6 +24,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'mattn/emmet-vim' 							" Emmet
 
 	" File tree and fuzzy finder
+	Plug 'junegunn/fzf' 							" FZF
 	Plug 'junegunn/fzf.vim' 						" FZF Wrapper
 	Plug 'preservim/nerdtree'						" File navigation
 
@@ -38,6 +39,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'bronson/vim-trailing-whitespace'			" Trim trailing whitespaces
 	Plug 'alvan/vim-closetag' 	 					" HTML
 	Plug 'voldikss/vim-floaterm' 					" Floating terminal
+	Plug 'itchyny/vim-gitbranch' 					" Git branch variable
 
 	" Folding
 	Plug 'kevinhwang91/promise-async'
@@ -45,9 +47,6 @@ call plug#begin('~/.vim/plugged')
 
 	" Visual
 	Plug 'kaicataldo/material.vim' 					" Colorscheme
-	Plug 'dylanaraps/wal.vim' 						" Pywal Colorscheme
-	Plug 'itchyny/lightline.vim'					" Status line
-	Plug 'ap/vim-buftabline'						" Buffer tabs
 	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " Nerdtree colors
 	Plug 'ryanoasis/vim-devicons' 					" Icons
 

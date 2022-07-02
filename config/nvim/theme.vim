@@ -25,6 +25,3 @@ hi Normal guibg=NONE ctermbg=NONE
 
 " Floaterm border color
 hi FloatermBorder guibg=NONE guifg=white
-
-" Lightline
-let g:lightline = { 'colorcheme': 'material_vim' }

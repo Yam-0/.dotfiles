@@ -4,7 +4,7 @@ set foldmethod=manual
 
 lua << EOF
 
-vim.wo.foldcolumn = '0'
+vim.o.foldcolumn = '0'
 vim.wo.foldlevel = 99
 vim.wo.foldenable = true
 
