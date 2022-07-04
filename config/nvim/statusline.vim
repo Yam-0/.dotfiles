@@ -69,4 +69,4 @@ set winbar+=%=
 set winbar+=%=
 
 set winbar+=%#LineNr#
-set winbar+=\ %{&filetype}
+set winbar+=\ %{&filetype}\ 
