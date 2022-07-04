@@ -22,6 +22,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'lervag/vimtex' 							" LaTeX
 	Plug 'honza/vim-snippets' 						" Snippets
 	Plug 'mattn/emmet-vim' 							" Emmet
+	Plug 'OmniSharp/omnisharp-vim'
 
 	" File tree and fuzzy finder
 	Plug 'junegunn/fzf' 							" FZF

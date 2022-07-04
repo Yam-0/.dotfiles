@@ -29,3 +29,11 @@ let g:floaterm_keymap_toggle = '<c-t>'
 " Buftabline
 let g:buftabline_separators = 1
 let g:buftabline_indicators = 1
+
+" omnisharp use global mono
+let g:OmniSharp_server_use_net6 = 1
+let g:OmniSharp_selector_ui = 'fzf'
+let g:OmniSharp_selector_findusages = 'fzf'
+let g:ale_linters = {
+	\ 'cs': ['OmniSharp']
+	\}
