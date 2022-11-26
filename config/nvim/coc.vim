@@ -73,4 +73,4 @@ xmap <silent> <C-s> <Plug>(coc-range-select)
 " ==========================================================================
 " Extensions
 " ==========================================================================
-let g:coc_global_extensions=[ 'coc-clangd', 'coc-sh', 'coc-html', 'coc-css', 'coc-json', 'coc-tsserver', 'coc-vimlsp', 'coc-snippets', 'coc-python', 'coc-cl', 'coc-docker', 'coc-tabnine' ]
+let g:coc_global_extensions=[ 'coc-clangd', 'coc-sh', 'coc-html', 'coc-css', 'coc-json', 'coc-tsserver', 'coc-vimlsp', 'coc-snippets', 'coc-python', 'coc-docker', 'coc-tabnine' ]
