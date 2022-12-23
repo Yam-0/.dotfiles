@@ -1,10 +1,6 @@
 let g:startify_bookmarks = [
-	\ { 'i': '~/.config/i3/config' },
-	\ { 'a': '~/Projects/.dotfiles/config/alacritty/alacritty.yml' },
 	\ { 'v': '~/Projects/.dotfiles/config/nvim/init.vim' },
-	\ { 'z': '~/Projects/.dotfiles/.zshrc' },
-	\ { 'b': '~/Projects/.dotfiles/.bashrc' },
-	\ { 'p': '~/Projects/.dotfiles/config/polybar/config.ini' }
+	\ { 'b': '~/.bashrc' },
 	\ ]
 
 let g:startify_lists = [
