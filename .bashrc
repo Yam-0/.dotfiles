@@ -12,12 +12,12 @@ reset
 date +'%A %H:%M'
 
 # PS1='[ \W ] : '
-if [ "$EUID" -ne 0 ]
-then
-	PS1='\n\e[0;34mTAGE [\e[m \W \e[0;34m]\e[m : '
-else
-	PS1='\n\e[0;31mROOT [\e[m \W \e[0;31m]\e[m : '
-fi
+# if [ "$EUID" -ne 0 ]
+# then
+# 	PS1='\n\e[0;34mTAGE [\e[m \W \e[0;34m]\e[m : '
+# else
+# 	PS1='\n\e[0;31mROOT [\e[m \W \e[0;31m]\e[m : '
+# fi
 
 # Bindings
 bind -x '"\C-n": $TERM --working-directory . &'
