@@ -48,7 +48,6 @@ call plug#begin('~/.vim/plugged')
 
 	" Visual
 	Plug 'kaicataldo/material.vim' 					" Colorscheme
-	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'  " Nerdtree colors
 	Plug 'ryanoasis/vim-devicons' 					" Icons
 
 call plug#end()
