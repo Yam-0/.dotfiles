@@ -8,9 +8,6 @@ set smartindent
 set autoindent
 set nowrap
 
-" Mouse
-set mouse=a
-
 " No damn bells
 set belloff=all
 
