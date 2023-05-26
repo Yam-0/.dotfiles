@@ -42,10 +42,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'voldikss/vim-floaterm' 					" Floating terminal
 	Plug 'itchyny/vim-gitbranch' 					" Git branch variable
 
-	" Folding
-	Plug 'kevinhwang91/promise-async'
-	Plug 'kevinhwang91/nvim-ufo'
-
 	" Visual
 	Plug 'kaicataldo/material.vim' 					" Colorscheme
 	Plug 'ryanoasis/vim-devicons' 					" Icons

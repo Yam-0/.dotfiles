@@ -1,4 +1,3 @@
-#!/usr/bin/zsh
+#!/bin/bash
 
-sleep 1
 tty-clock -c -C 7 -b -D

@@ -18,6 +18,10 @@ element-text, element-icon {
 * {
 	background-color: @bg;
 	text-color: @fg;
+
+	al:  #FFFFFF;
+	bg:  #0B0B0B;
+	fg:  #666666;
 }
 
 window {
@@ -56,4 +60,6 @@ element {
 
 element.selected {
 	background-color: @al;
+}
+* {
 }

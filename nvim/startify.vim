@@ -1,5 +1,5 @@
 let g:startify_bookmarks = [
-	\ { 'v': '~/Projects/.dotfiles/config/nvim/init.vim' },
+	\ { 'v': '~/Projects/.dotfiles/nvim/init.vim' },
 	\ { 'b': '~/.bashrc' },
 	\ ]
 
